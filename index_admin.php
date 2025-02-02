@@ -170,7 +170,16 @@
         </div>
         </div>
         <div class="block_eng">
-            <p class="block_eng_right eco">Экономный 💵</p>
+            <p class="block_eng_right eco">
+            <?php 
+            require "php/celect_course.php";
+
+            while($result = mysqli_fetch_assoc($sql2)){
+                
+                echo $result['second_prefix'];    
+                
+            } ?> 💵</p>
+            
             <p class="block_eng_right">
                 <?php 
             require "php/celect_course.php";
