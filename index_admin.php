@@ -166,17 +166,18 @@
         </p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
-            <a href="#registr" onclick="RegShowHide(this)">Купить сейчас</a> <label class="block_eng_right"><button id="button" onclick="showhide()">✍</button></label>
+            <a href="#registr" onclick="RegShowHide(this)">Купить сейчас</a>
+            <button id="button" onclick="showhide()">✍</button>
         </div>
         </div>
         <div class="block_eng">
-    <div id="showhide1" class="block_eng_right eco blue showhide">
+    <div id="showhide3" class="block_eng_right eco blue showhide">
         <form action="php/rename.course.php" method="GET">
                 <input type="text" name="new_prefix_course">
                 <button type="submit">✔️</button>       
         </form>
     </div>
-            <p id="el2" class="block_eng_right eco">
+            <p id="el3" class="block_eng_right eco">
             <?php 
             require "php/celect_course.php";
 
@@ -185,13 +186,13 @@
                 echo $result['second_prefix'];    
                 
             } ?> 💵</p>
-    <div id="showhide1" class="block_eng_right eco blue showhide">
+    <div id="showhide3" class="block_eng_right eco blue showhide">
         <form action="php/rename.course.php" method="GET">
                 <input type="text" name="new_prefix_course">
                 <button type="submit">✔️</button>       
         </form>
     </div>
-            <p id="el2" class="block_eng_right">
+            <p id="el3" class="block_eng_right">
                 <?php 
             require "php/celect_course.php";
 
@@ -200,13 +201,13 @@
                 echo $result['prefix_course'];    
                 
             } ?> 🔥</p>
-    <div id="showhide1" class="block_eng__left_top showhide gainsboro">
+    <div id="showhide3" class="block_eng__left_top showhide gainsboro">
         <form action="php/rename.course.php" method="GET">
                 <input type="text" name="new_name_course">
             <button type="submit">✔️</button>
         </form>
     </div> 
-            <h3 id="el2"><?php 
+            <h3 id="el3"><?php 
             require "php/celect_course.php";
 
             while($result = mysqli_fetch_assoc($sql2)){
@@ -214,14 +215,14 @@
                 echo $result['name_course'];    
                 
             } ?></h3>
-    <div id="showhide1" class="showhide gainsboro showhide_margin">
+    <div id="showhide3" class="showhide gainsboro showhide_margin">
         <form action="php/rename.course.php" method="GET">
             <label for="">🌟<input type="text" name="new_first_string"></label>
             <button type="submit">✔️</button>
                 
         </form>
     </div>
-        <p id="el2" class="block_eng_plus">	🌟 <?php 
+        <p id="el3" class="block_eng_plus">	🌟 <?php 
             require "php/celect_course.php";
 
             while($result = mysqli_fetch_assoc($sql2)){
@@ -229,13 +230,13 @@
                 echo $result['first_string'];    
                 
             } ?></p>
-    <div id="showhide1" class="showhide gainsboro showhide_margin">
+    <div id="showhide3" class="showhide gainsboro showhide_margin">
         <form action="php/rename.course.php" method="GET">
         <label for="">🌟<input type="text" name="new_second_string"></label>
             <button type="submit">✔️</button>
         </form>
     </div>
-            <p id="el2" class="block_eng_plus">🌟 <?php 
+            <p id="el3" class="block_eng_plus">🌟 <?php 
             require "php/celect_course.php";
 
             while($result = mysqli_fetch_assoc($sql2)){
@@ -243,13 +244,13 @@
                 echo $result['second_string'];    
                 
             } ?></p>
-    <div id="showhide1" class="showhide gainsboro showhide_margin">
+    <div id="showhide3" class="showhide gainsboro showhide_margin">
         <form action="php/rename.course.php" method="GET">
         <label for="">🌟<input type="text" name="new_third_string"></label>
             <button type="submit">✔️</button>
         </form>
     </div>
-            <p id="el2" class="block_eng_plus">🌟 <?php 
+            <p id="el3" class="block_eng_plus">🌟 <?php 
             require "php/celect_course.php";
 
             while($result = mysqli_fetch_assoc($sql2)){
@@ -260,6 +261,7 @@
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
             <a href="#registr">Купить сейчас</a>
+            <button id="button" onclick="showhide2()">✍</button>
             
         </div>
         

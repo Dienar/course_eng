@@ -15,4 +15,19 @@ function showhide() {
         el.classList.toggle("showhide");
     });
 }
-// на сколько минут ставим таймер
+function showhide2() {
+    var elem = document.querySelectorAll('#showhide3');
+    var elem1 = document.querySelectorAll('#el3');
+    
+
+
+
+    elem.forEach(function(el) {
+        el.classList.toggle("showhide");
+    });
+
+    elem1.forEach(function(el) {
+        el.classList.toggle("showhide");
+    });
+}
+
