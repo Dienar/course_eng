@@ -121,7 +121,6 @@ class CourseUpdater2{
         $query = "UPDATE `course-2` SET `third_string` = '$newthirdstring\r\n' WHERE `id` = 1";
         return $this->executeQuery($query);
     }
-
     private function executeQuery($query)
     {
         if ($this->mysqli->query($query)) {
@@ -132,7 +131,6 @@ class CourseUpdater2{
             return false;
         }
     }
-
     public function __destruct()
     {
         $this->mysqli->close();
