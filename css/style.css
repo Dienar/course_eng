@@ -294,10 +294,10 @@ button:hover{
 
 }
 .block_eng__left_top{
-    background-color: gray;  
     border-radius: 25px;
     padding: 0.8em;
     width: 15em;
+    height: 40px;
     margin-right: 0.9em;
     margin-top: 2.7em;
     font-weight: 800;
@@ -310,7 +310,7 @@ button:hover{
     padding: 0.8em;
     float: right;
     margin-right: 0.6em;
-    margin-top: 1.9em;
+    margin-top: 0.7em;
     font-weight: 800;
     margin-left: 1.4em
 }
