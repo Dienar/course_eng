@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container"><h3 id="cost_course"></h3>
-    <form action="#">
+    <div class="form">
       <div class="row">
         <div class="col">
           <h3 class="title">
@@ -20,7 +20,7 @@
                           </label>
             <input type="text" id="name"
                                placeholder="Enter your full name"
-                               required>
+                              >
                     </div>
             <div class="inputBox">
               <label for="email">
@@ -28,7 +28,7 @@
                           </label>
               <input type="text" id="email"
                                placeholder="Enter email address"
-                               required>
+                              >
                     </div>
                 <div class="inputBox">
                   <label for="city">
@@ -36,7 +36,7 @@
                           </label>
                   <input type="text" id="city"
                                placeholder="Enter city"
-                               required>
+                              >
                     </div>
                   <div class="flex">
                       <div class="inputBox">
@@ -45,7 +45,7 @@
                               </label>
                         <input type="number" id="zip"
                                    placeholder="123 456"
-                                   required>
+                                  >
                         </div>
                       </div>
                     </div>
@@ -67,7 +67,7 @@
                           </label>
                           <input type="text" id="cardName"
                                placeholder="Enter card name"
-                               required>
+                              >
                     </div>
                           <div class="inputBox">
                             <label for="cardNum">
@@ -75,7 +75,7 @@
                           </label>
                             <input type="text" id="cardNum"
                                placeholder="1111-2222-3333-4444"
-                               maxlength="19" required>
+                               maxlength="19">
                     </div>
                             <div class="flex">
                               <div class="inputBox">
@@ -85,14 +85,18 @@
                               <div class="inputBox">
                                 <label for="cvv">CVV</label>
                                 <input type="password" id="cvv"
-                                    oninput="this.value = this.value.slice(0, 3)" required>
+                                    oninput="this.value = this.value.slice(0, 3)">
                         </div>
                               </div>
                             </div>
+                            
                           </div>
                           <input type="submit" value="Proceed to Checkout"
                    class="submit_btn">
-        </form>
+                   <input type="submit" onclick="closeSess()" value="Close Session"
+                   class="submit_btn_red">
+                 </div>
+       
                         </div>
                         <script src="jquery-3.7.1.min.js"></script>
                         <script src="js/mask.js" data-autoinit="true"></script>

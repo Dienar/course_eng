@@ -66,19 +66,25 @@ if(costifnull === null){
 document.getElementById("cost_course").innerHTML = "Сумма оплаты составляет: " + localStorage.getItem('cost') + " ₽";
 function course1(){
   localStorage.setItem('cost',4000);
-  window.location.replace("payment.php?");
+  window.location.href = "payment.php?";
   
 }
 function course2(){
   localStorage.setItem('cost',3500);
-  window.location.replace("payment.php?");
+  window.location.href = "payment.php?";
 }
 function course3(){
   localStorage.setItem('cost',2500);
-  window.location.replace("payment.php?");
+  window.location.href = "payment.php?" ;
 }
 function course4(){
   localStorage.setItem('cost',3000);
-  window.location.replace("payment.php?");
+  window.location.href = "payment.php?";
 }
-
+function closeSess(){
+  var leave_page = confirm("Завершаю сессию");
+  if(leave_page){
+  window.location.replace("index.php");
+  localStorage.getItem('cost') = 0;
+  }
+}
