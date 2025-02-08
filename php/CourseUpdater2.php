@@ -1,48 +1,47 @@
 <?php
-
-require_once "conn.php";
-
-class CourseUpdater
-{
+require_once 'conn.php';
+class CourseUpdater2{
     private $mysqli;
-
-    public function __construct($mysqli)
-    {
+    public function __construct($mysqli){
         $this->mysqli = $mysqli;
     }
-
     public function updateCourseName($newName)
     {
         $newName = $this->mysqli->real_escape_string(trim($newName));
-        $query = "UPDATE `course-1` SET `name_course` = '$newName\r\n' WHERE `id` = 1";
+        $query = "UPDATE `course-2` SET `name_course` = '$newName\r\n' WHERE `id` = 2";
         return $this->executeQuery($query);
     }
 
     public function updateCoursePrefix($newPrefix)
     {
         $newPrefix = $this->mysqli->real_escape_string(trim($newPrefix));
-        $query = "UPDATE `course-1` SET `prefix_course` = '$newPrefix\r\n' WHERE `id` = 1";
+        $query = "UPDATE `course-2` SET `prefix_course` = '$newPrefix\r\n' WHERE `id` = 2";
+        return $this->executeQuery($query);
+    }
+    public function updateCourseSecondPrefix($newSecondPrefix)
+    {
+        $newSecondPrefix = $this->mysqli->real_escape_string(trim($newSecondPrefix));
+        $query = "UPDATE `course-2` SET `second_prefix` = '$newSecondPrefix\r\n' WHERE `id` = 2";
         return $this->executeQuery($query);
     }
     public function updataFirstString($newfirststring)
     {
         $newfirststring= $this->mysqli->real_escape_string(trim($newfirststring));
-        $query = "UPDATE `course-1` SET `first_string` = '$newfirststring\r\n' WHERE `id` = 1";
+        $query = "UPDATE `course-2` SET `first_string` = '$newfirststring\r\n' WHERE `id` = 2";
         return $this->executeQuery($query);
     }
     public function updateSecondString($newsecondstring)
     {
         $newsecondstring= $this->mysqli->real_escape_string(trim($newsecondstring));
-        $query = "UPDATE `course-1` SET `second_string` = '$newsecondstring\r\n' WHERE `id` = 1";
+        $query = "UPDATE `course-2` SET `second_string` = '$newsecondstring\r\n' WHERE `id` = 2";
         return $this->executeQuery($query);
     }
     public function updateThirdString($newthirdstring)
     {
         $newthirdstring= $this->mysqli->real_escape_string(trim($newthirdstring));
-        $query = "UPDATE `course-1` SET `third_string` = '$newthirdstring\r\n' WHERE `id` = 1";
+        $query = "UPDATE `course-2` SET `third_string` = '$newthirdstring\r\n' WHERE `id` = 1";
         return $this->executeQuery($query);
     }
-
     private function executeQuery($query)
     {
         if ($this->mysqli->query($query)) {
@@ -53,7 +52,6 @@ class CourseUpdater
             return false;
         }
     }
-
     public function __destruct()
     {
         $this->mysqli->close();
@@ -61,7 +59,7 @@ class CourseUpdater
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $updater = new CourseUpdater($mysqli1);
+    $updater = new CourseUpdater2($mysqli1);
 
     if (isset($_GET['new_name_course'])) {
         $newNameCourse = $_GET['new_name_course'];
@@ -71,6 +69,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (isset($_GET['new_prefix_course'])) {
         $newPrefixCourse = $_GET['new_prefix_course'];
         $updater->updateCoursePrefix($newPrefixCourse);
+    }
+    if (isset($_GET['new_second_prefix_course'])) {
+        $newSecondPrefix = $_GET['new_second_prefix_course'];
+        $updater->updateCourseSecondPrefix($newSecondPrefix);
     }
     if (isset($_GET['new_first_string'])) {
         $new_first_string = $_GET['new_first_string'];

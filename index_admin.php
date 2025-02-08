@@ -172,8 +172,8 @@
         </div>
         <div class="block_eng">
     <div id="showhide3" class="block_eng_right eco blue showhide">
-        <form action="php/rename.course.php" method="GET">
-                <input type="text" name="new_prefix_course">
+        <form action="php/CourseUpdater2.php" method="GET">
+                <input type="text" name="new_second_prefix_course">
                 <button type="submit">✔️</button>       
         </form>
     </div>
@@ -187,7 +187,7 @@
                 
             } ?> 💵</p>
     <div id="showhide3" class="block_eng_right eco blue showhide">
-        <form action="php/rename.course.php" method="GET">
+        <form action="php/CourseUpdater2.php" method="GET">
                 <input type="text" name="new_prefix_course">
                 <button type="submit">✔️</button>       
         </form>
@@ -202,7 +202,7 @@
                 
             } ?> 🔥</p>
     <div id="showhide3" class="block_eng__left_top showhide gainsboro">
-        <form action="php/rename.course.php" method="GET">
+        <form action="php/CourseUpdater2.php" method="GET">
                 <input type="text" name="new_name_course">
             <button type="submit">✔️</button>
         </form>
@@ -216,7 +216,7 @@
                 
             } ?></h3>
     <div id="showhide3" class="showhide gainsboro showhide_margin">
-        <form action="php/rename.course.php" method="GET">
+        <form action="php/CourseUpdater2.php" method="GET">
             <label for="">🌟<input type="text" name="new_first_string"></label>
             <button type="submit">✔️</button>
                 
@@ -231,7 +231,7 @@
                 
             } ?></p>
     <div id="showhide3" class="showhide gainsboro showhide_margin">
-        <form action="php/rename.course.php" method="GET">
+        <form action="php/CourseUpdater2.php" method="GET">
         <label for="">🌟<input type="text" name="new_second_string"></label>
             <button type="submit">✔️</button>
         </form>
@@ -245,7 +245,7 @@
                 
             } ?></p>
     <div id="showhide3" class="showhide gainsboro showhide_margin">
-        <form action="php/rename.course.php" method="GET">
+        <form action="php/CourseUpdater2.php" method="GET">
         <label for="">🌟<input type="text" name="new_third_string"></label>
             <button type="submit">✔️</button>
         </form>
