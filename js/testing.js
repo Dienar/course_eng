@@ -142,23 +142,34 @@ const quizData = [
   
   function displayResult() {
     if (score == 10){
+      Swal.fire({
+        title: "Поздравляю ! Вам одобрена скидка !",
+        icon: "success",
+        draggable: true
+      });
+    localStorage.setItem('discount', 0.2);
     quizContainer.style.display = 'none';
     submitButton.style.display = 'none';
     retryButton.style.display = 'inline-block';
-    showAnswerButton.style.display = 'inline-block';
+    showAnswerButton.style.display = 'none';
     resultContainer.innerHTML = `You scored ${score} out of ${quizData.length}! You have promo! Lets go!`;
   }else{
+    Swal.fire({
+      title: "С сожалению вы не получили скидку =(",
+      icon: "error",
+      draggable: true
+    });
     quizContainer.style.display = 'none';
     submitButton.style.display = 'none';
     retryButton.style.display = 'inline-block';
-    showAnswerButton.style.display = 'inline-block';
+    showAnswerButton.style.display = 'none';
     resultContainer.innerHTML = `You scored ${score} out of ${quizData.length}!`;
   }}
   
   function Mainmenu() {
     window.location = "index.php";
   }
-  
+
   function showAnswer() {
     quizContainer.style.display = 'none';
     submitButton.style.display = 'none';

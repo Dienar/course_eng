@@ -63,7 +63,15 @@ if(costifnull === null){
   window.location.replace("index.php");
   localStorage.getItem('cost') = 0;
 }
+if(localStorage.getItem('discount')){
+  discount = localStorage.getItem('discount');
+  CostWithoutDiscount = localStorage.getItem('cost');
+  FinalCost = CostWithoutDiscount-(CostWithoutDiscount*discount);
+  document.getElementById("cost_course").innerHTML = "Сумма оплаты составляет: " + FinalCost + " ₽" + "<br>" + "Применена скидка: " + CostWithoutDiscount*discount +" ₽";
+}else{
+costifnull = localStorage.getItem('cost');
 document.getElementById("cost_course").innerHTML = "Сумма оплаты составляет: " + localStorage.getItem('cost') + " ₽";
+}
 function course1(){
   localStorage.setItem('cost',4000);
   window.location.href = "payment.php?";
