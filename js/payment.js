@@ -82,9 +82,19 @@ function course4(){
   window.location.href = "payment.php?";
 }
 function closeSess(){
-  var leave_page = confirm("Завершаю сессию");
-  if(leave_page){
-  window.location.replace("index.php");
-  localStorage.getItem('cost') = 0;
-  }
+  Swal.fire({
+    title: "Вы уверены?",
+    text: "Завершая сессию вы прервете покупку!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Отменить покупку",
+    cancelButtonText : "Назад"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.location.replace("index.php");
+      localStorage.getItem('cost') = 0;
+    }
+  });
 }

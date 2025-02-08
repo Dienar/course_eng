@@ -289,9 +289,7 @@ button:hover{
     padding: 0.2em;
 }
 .showhide_margin{
-   
     padding-top: 1.9em;
-
 }
 .block_eng__left_top{
     border-radius: 25px;
@@ -324,8 +322,6 @@ button:hover{
 .block_eng_button{
   margin-top: 2em;
   margin-left: 1.4em;
-
-    
 }
 .block_eng a{
     background-color: rgb(230, 101, 50);
@@ -341,7 +337,6 @@ button:hover{
 }
 .block_eng a:hover{
     background-color: rgb(230, 129, 89);
-
 }
 .block_test_course{
     width: 84.5em;
@@ -356,7 +351,6 @@ button:hover{
     border-radius: 15px;
     display: flex;
     font-family: 'Poppins', sans-serif;
-
 }
 
 .block_right_test_course{
@@ -369,14 +363,12 @@ button:hover{
     padding-top: 10px;
     padding-left: 10px;
     color: white;
-  
-  background-color: #48b774;
-  border-radius: 15px;
+    background-color: #48b774;
+    border-radius: 15px;
 }
 .text_test_course h4{
     margin-top: 1em;
-    font-size: 1.5em;
-    
+    font-size: 1.5em; 
 }
 .first-block_test_course{
     flex-wrap: wrap;
@@ -385,7 +377,6 @@ button:hover{
     background-color: rgb(220, 219, 218);
     border-radius: 12px;
     margin-left: 1em;
-    
 }
 .first-block_test_course h3{
     font-size: 1.4em;
@@ -404,7 +395,6 @@ button:hover{
 .first-block_test_course img{
     vertical-align: middle;
     margin-right: 0;
-
 }
 .first-block_test_course h2{
     font-size: 1.5em;
@@ -443,7 +433,7 @@ button:hover{
     margin-left: 1em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-  text-shadow: 0px 5px 25px #009ee4;
+    text-shadow: 0px 5px 25px #009ee4;
     color: #009ee4;
 }
 .second-block_img_text{
@@ -452,7 +442,6 @@ button:hover{
     width: 26.5em;
     vertical-align: middle;
     margin-right: 0;
-
 }
 .second-block_img_text img{
     margin-right: 0;
@@ -537,6 +526,13 @@ button:hover{
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     color: black;
+}
+.swal2-popup.swal2-modal.swal2-icon-question.swal2-show{
+    margin: 0;
+}
+.swal2-icon-content {
+    margin: 0;
+    padding: 0;
 }
 .block_bonus_form{
     margin-top: 3em;

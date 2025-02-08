@@ -462,17 +462,7 @@
 <script src="js/payment.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="jquery-3.7.1.min.js"></script>
-<script>
-    function Freetest(){
-  var result = confirm("У вас будет только 1 попытка, начинаем?");
-  if(result){
- window.location = "test_free.html";   
-  }else{
-    
-  }
-};
-</script>
-<script src="test.js"></script>
+<script src="js/test.js"></script>
 <script src="js/showhide.js"></script>
 </body>
 </html>

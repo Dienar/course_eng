@@ -98,6 +98,7 @@
                  </div>
        
                         </div>
+                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                         <script src="jquery-3.7.1.min.js"></script>
                         <script src="js/mask.js" data-autoinit="true"></script>
                         <script type="text/javascript" src="js/payment.js"></script>
