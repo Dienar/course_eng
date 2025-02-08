@@ -67,7 +67,6 @@ document.getElementById("cost_course").innerHTML = "Сумма оплаты со
 function course1(){
   localStorage.setItem('cost',4000);
   window.location.href = "payment.php?";
-  
 }
 function course2(){
   localStorage.setItem('cost',3500);
