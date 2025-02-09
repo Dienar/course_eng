@@ -283,7 +283,7 @@
             <img src="img/Sparcle.svg" alt=""><p> Бесплатная консультация</p>
         </div>
         <h2>Бесплатно</h2>
-            <a onclick="Freetest()"><button>Начать</button></a>
+            <a ><button>Начать</button></a>
         </div>
         <div class="second-block_test_course">
             <h3>Тест для получения скидки на курс !</h3>
@@ -293,7 +293,7 @@
             <img src="img/Sparcle.svg" alt=""><p> Уровень для прохождения теста B2</p>
         </div>
             <h2>Бесплатно</h2>
-            <button>Начать</button>
+            <button onclick="Freetest()">Начать</button>
         </div>
     </div>
 </div>
@@ -324,7 +324,7 @@
 
 <div class="block_bonus_form">
     <div class="left_block_bonus">
-        <h2>Успейте забрать скидку до 20% на любой курс</h2>
+        <h2>Получите все актуальные новости о наших курсах!</h2>
         <p>Оставьте заявку на вводный урок сейчас и учитесь дешевле даже после завершения акции</p>
 <div class="left_block_bonus_buttons">
 <p>диагностика уровня бесплатно</p>
