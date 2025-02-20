@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 require_once "conn.php";
 if(isset($_GET['sendmessage'])){
     $messageform= $_GET['message'];
@@ -11,4 +11,4 @@ if($result){
     echo "ПИЗДЕЦ";
 }
 $mysqli->close();
-} -->
+}
