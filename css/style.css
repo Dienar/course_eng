@@ -118,11 +118,19 @@ button:hover{
     transform: scaleX(1);
 }
 .register_container{
+    display: flex;
     margin-left: 13em;
     margin-right: 10em;
     margin-top: 1.2em;
+    font-size: 1.2em;
+}
+.register_container i{
+    margin-right: 0.5em;
+}
+.register_container a{
+    display: flex;
+    color: #4A4A4A;
 
-    
 }
 .register_container button{
     width: 7em;

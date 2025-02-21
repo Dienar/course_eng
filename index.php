@@ -6,7 +6,8 @@
     <title>Global</title>
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="manifest" href="/site.webmanifest">
     <script src="jquery-3.7.1.min.js"></script>
     <script>
@@ -49,7 +50,7 @@
     <a href="">Помощь</a>
     <a href="">О нас</a>
 </div>
-<div class="register_container">
+<div class="register_container"><a href=""><i class="fa-solid fa-user-tie"></i> Profile</a>
 </div>
 </div><div class="img__container__start">
         <img src="img/women__ready.png" alt="">
