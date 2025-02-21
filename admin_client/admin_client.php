@@ -12,12 +12,10 @@ $result = $mysqli->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список пользователей</title>
     <link rel="stylesheet" href="admin_client.css">
-
 </head>
 <body>
-<a href="../php/logout.php" class="logout-btn">Выход</a>
+<a href="../php/logout.php" class="logout-btn">Назад</a>
 <h2>Список пользователей</h2>
-
 <table>
     <tr>
         <th>ID</th>
@@ -39,6 +37,5 @@ $result = $mysqli->query($sql);
     </tr>
     <?php endwhile; ?>
 </table>
-
 </body>
 </html>

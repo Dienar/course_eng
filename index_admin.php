@@ -53,6 +53,7 @@
     <a href="">О нас</a>
 </div>
 <div class="register_container"><a href="admin_client/admin_client.php"><i class="fa-solid fa-user-tie"></i> ADMIN</a>
+<a href="index.php" class="logout-btn">Выход</a>
 </div>
 </div><div class="img__container__start">
         <img src="img/women__ready.png" alt="">
