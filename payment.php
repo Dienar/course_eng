@@ -8,6 +8,7 @@
 </head>
 <body>
   <div class="container"><h3 id="cost_course"></h3>
+  <form action="php/payment.php" method="post">
     <div class="form">
       <div class="row">
         <div class="col">
@@ -15,39 +16,23 @@
             Оплата заказа
           </h3>
           <div class="inputBox">
-            <label for="name">
-                          Полное имя:
-                          </label>
-            <input type="text" id="name"
-                               placeholder="Enter your full name"
-                              >
+            <label for="name">Полное имя:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name">
                     </div>
             <div class="inputBox">
-              <label for="email">
-                              Email:
-                          </label>
-              <input type="text" id="email"
-                               placeholder="Enter email address"
-                              >
+              <label for="email">Email:</label>
+              <input type="text" id="email" name="email" placeholder="Enter email address">
                     </div>
                 <div class="inputBox">
-                  <label for="city">
-                              Город:
-                          </label>
-                  <input type="text" id="city"
-                               placeholder="Enter city"
-                              >
+                  <label for="city">Город:</label>
+                  <input type="text" id="city" name="city" placeholder="Enter city">
                     </div>
                   <div class="flex">
                       <div class="inputBox">
-                        <label for="zip">
-                                  Индекс:
-                              </label>
-                        <input type="number" id="zip"
-                                   placeholder="123 456"
-                                  >
-                        </div>
-                      </div>
+                        <label for="zip">Индекс:</label>
+                        <input type="number" id="zip" name="index_user" placeholder="123 456">
+                    </div>
+                  </div>
                     </div>
                     <div class="col">
                     <div class="time_block"><label>Окончание сессии: </label>
@@ -56,26 +41,16 @@
                 </p>
                       <h3 class="title">Payment</h3>
                       <div class="inputBox">
-                        <label for="name">
-                              Одобренные карты:
-                          </label>
+                        <label for="name">Одобренные карты:</label>
                         <img src="img/payment__photo.webp" alt="credit/debit card image">
                     </div>
                         <div class="inputBox">
-                          <label for="cardName">
-                              Имя:
-                          </label>
-                          <input type="text" id="cardName"
-                               placeholder="Enter card name"
-                              >
+                          <label for="cardName">Имя:</label>
+                          <input type="text" id="cardName" name="nameoncart" placeholder="Enter card name">
                     </div>
                           <div class="inputBox">
-                            <label for="cardNum">
-                              Номер карты:
-                          </label>
-                            <input type="text" id="cardNum"
-                               placeholder="1111-2222-3333-4444"
-                               maxlength="19">
+                            <label for="cardNum">Номер карты:</label>
+                            <input type="text" id="cardNum" name="cartnum" placeholder="1111-2222-3333-4444" maxlength="19">
                     </div>
                             <div class="flex">
                               <div class="inputBox">
@@ -98,6 +73,7 @@
                  </div>
        
                         </div>
+                        </form>
                         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                         <script src="jquery-3.7.1.min.js"></script>
                         <script src="js/mask.js" data-autoinit="true"></script>
