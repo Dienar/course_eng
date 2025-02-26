@@ -1,81 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Payment-Page</title>
-  <link rel="stylesheet" href="css/payment.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Оплата заказа</title>
+	<link rel="stylesheet" href="css/payment.css">
 </head>
+
 <body>
-  <div class="container"><h3 id="cost_course"></h3>
-  <form action="php/payment.php" method="post">
-    <div class="form">
-      <div class="row">
-        <div class="col">
-          <h3 class="title">
-            Оплата заказа
-          </h3>
-          <div class="inputBox">
-            <label for="name">Полное имя:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name">
-                    </div>
-            <div class="inputBox">
-              <label for="email">Email:</label>
-              <input type="text" id="email" name="email" placeholder="Enter email address">
-                    </div>
-                <div class="inputBox">
-                  <label for="city">Город:</label>
-                  <input type="text" id="city" name="city" placeholder="Enter city">
-                    </div>
-                  <div class="flex">
-                      <div class="inputBox">
-                        <label for="zip">Индекс:</label>
-                        <input type="number" id="zip" name="index_user" placeholder="123 456">
-                    </div>
-                  </div>
-                    </div>
-                    <div class="col">
-                    <div class="time_block"><label>Окончание сессии: </label>
-                    <p>
-	            <div id="timer"></div></div>
-                </p>
-                      <h3 class="title">Payment</h3>
-                      <div class="inputBox">
-                        <label for="name">Одобренные карты:</label>
-                        <img src="img/payment__photo.webp" alt="credit/debit card image">
-                    </div>
-                        <div class="inputBox">
-                          <label for="cardName">Имя:</label>
-                          <input type="text" id="cardName" name="nameoncart" placeholder="Enter card name">
-                    </div>
-                          <div class="inputBox">
-                            <label for="cardNum">Номер карты:</label>
-                            <input type="text" id="cardNum" name="cartnum" placeholder="1111-2222-3333-4444" maxlength="19">
-                    </div>
-                            <div class="flex">
-                              <div class="inputBox">
-                                <label for="">Месяц/Год:</label>
-                                <input id="expiration" type="tel" placeholder="MM/YY" class="masked" pattern="(1[0-2]|0[1-9])\/\d\d" data-valid-example="11/18" title="2-digit month and 2-digit year greater than 01/24">
-                              </div>
-                              <div class="inputBox">
-                                <label for="cvv">CVV</label>
-                                <input type="password" id="cvv"
-                                    oninput="this.value = this.value.slice(0, 3)">
-                        </div>
-                              </div>
-                            </div>
-                            
-                          </div>
-                          <input type="submit" value="Proceed to Checkout"
-                   class="submit_btn">
-                   <input type="submit" onclick="closeSess()" value="Close Session"
-                   class="submit_btn_red">
-                 </div>
-       
-                        </div>
-                        </form>
-                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                        <script src="jquery-3.7.1.min.js"></script>
-                        <script src="js/mask.js" data-autoinit="true"></script>
-                        <script type="text/javascript" src="js/payment.js"></script>
+	<div class="payment-container">
+		<div class="payment-box">
+			<h3 id="cost_course" class="cost-summary"></h3>
+			<form action="php/payment.php" method="post" class="payment-form">
+				<div class="payment-header">
+					<h2>Оплата заказа</h2>
+				</div>
+
+				<div class="input-group">
+					<label for="name">Ф.И.О.</label>
+					<input type="text" id="name" name="name" placeholder="Введите полное имя" required>
+        </div>
+
+					<div class="input-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="Введите email" required>
+        </div>
+
+						<div class="input-group">
+							<label for="city">Город</label>
+							<input type="text" id="city" name="city" placeholder="Введите город" required>
+        </div>
+
+							<div class="input-group">
+								<label for="zip">Индекс</label>
+								<input type="number" id="zip" name="index_user" placeholder="123456" required>
+        </div>
+
+								<div class="payment-method">
+									<h3>Оплата картой</h3>
+
+									<div class="input-group">
+										<label for="cardName">Имя на карте</label>
+										<input type="text" id="cardName" name="nameoncart" placeholder="Введите имя на карте" required>
+          </div>
+
+										<div class="input-group">
+											<label for="cardNum">Номер карты</label>
+											<input type="text" id="cardNum" name="cartnum" placeholder="1111 2222 3333 4444" maxlength="19" required>
+          </div>
+
+											<div class="input-group-flex">
+                      <div class="input-group">
+  <label for="expiration">Срок действия</label>
+  <input type="text" id="expiration" name="expiration" placeholder="MM/YY" maxlength="5" required pattern="(0[1-9]|1[0-2])\/\d{2}" title="Введите дату в формате MM/YY">
+</div>
+													<div class="input-group">
+														<label for="cvv">CVV</label>
+														<input type="password" id="cvv" name="cvv" maxlength="3" required>
+            </div>
+													</div>
+												</div>
+
+												<div class="form-actions">
+													<input type="submit" value="Перейти к оплате" class="submit-btn">
+													<button type="button" onclick="closeSess()" class="cancel-btn">Закрыть сессию</button>
+												</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="jquery-3.7.1.min.js"></script>
+	<script src="js/mask.js" data-autoinit="true"></script>
+	<script type="text/javascript" src="js/payment.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('#expiration').mask('00/00');
+  });
+</script>
+</body>
+
 </html>
