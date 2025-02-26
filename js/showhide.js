@@ -15,19 +15,44 @@ function showhide() {
         el.classList.toggle("showhide");
     });
 }
+
 function showhide2() {
-    var elem = document.querySelectorAll('#showhide3');
-    var elem1 = document.querySelectorAll('#el3');
-    
+    var elems = document.querySelectorAll('#showhide3');
+    var elems1 = document.querySelectorAll('#el3');
 
-
-
-    elem.forEach(function(el) {
+    elems.forEach(function(el) {
         el.classList.toggle("showhide");
     });
 
-    elem1.forEach(function(el) {
+    elems1.forEach(function(el) {
         el.classList.toggle("showhide");
     });
 }
 
+// Функция для ТРЕТЬЕГО КУРСА
+function showhide4() {
+    var elems = document.querySelectorAll('#showhide4');
+    var elems1 = document.querySelectorAll('#el4');
+
+    elems.forEach(function(el) {
+        el.classList.toggle("showhide");
+    });
+
+    elems1.forEach(function(el) {
+        el.classList.toggle("showhide");
+    });
+}
+
+// Функция для ЧЕТВЕРТОГО КУРСА
+function showhide5() {
+    var elems = document.querySelectorAll('#showhide5');
+    var elems1 = document.querySelectorAll('#el5');
+
+    elems.forEach(function(el) {
+        el.classList.toggle("showhide");
+    });
+
+    elems1.forEach(function(el) {
+        el.classList.toggle("showhide");
+    });
+}

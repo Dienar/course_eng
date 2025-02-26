@@ -364,7 +364,6 @@
     <a href="">Политика конфидециальности</a>
     <p>© Global, 2024</p>
     </div></div>
-
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="js/payment.js"></script>

@@ -266,102 +266,109 @@
         </div>
         
         </div>
+        <!-- ТРЕТИЙ КУРС -->
         <div class="block_eng">
-            <p class="block_eng_right eco"><?php 
-            require "php/celect_course.php";
+            <div id="showhide4" class="block_eng_right eco blue showhide">
+                <form action="php/CourseUpdater3.php" method="GET">
+                    <input type="text" name="new_prefix_course">
+                    <button type="submit">✔️</button>       
+                </form>
+            </div>
+            <p id="el4" class="block_eng_right eco"><?php 
+                require "php/celect_course.php";
+                while ($result = mysqli_fetch_assoc($sql3)) {
+                    echo $result['prefix_course'];    
+                } 
+            ?> ⌚️</p>
 
-            while($result = mysqli_fetch_assoc($sql3)){
-                
-                echo $result['prefix_course'];    
-                
-            } ?> ⌚</p>
-            <h3><?php 
-            require "php/celect_course.php";
+            <div id="showhide4" class="block_eng__left_top showhide gainsboro">
+                <form action="php/CourseUpdater3.php" method="GET">
+                    <input type="text" name="new_name_course">
+                    <button type="submit">✔️</button>
+                </form>
+            </div>
+            <h3 id="el4"><?php 
+                require "php/celect_course.php";
+                while ($result = mysqli_fetch_assoc($sql3)) {
+                    echo $result['name_course'];    
+                } 
+            ?></h3>
 
-            while($result = mysqli_fetch_assoc($sql3)){
-                
-                echo $result['name_course'];    
-                
-            } ?></h3>
-            <p class="block_eng_plus">  🌟 <?php 
-            require "php/celect_course.php";
+            <!-- Редактирование строк -->
+            <?php $fields = ['first_string', 'second_string', 'third_string']; ?>
+            <?php foreach ($fields as $field): ?>
+                <div id="showhide4" class="showhide gainsboro showhide_margin">
+                    <form action="php/CourseUpdater3.php" method="GET">
+                        <label for="">🌟<input type="text" name="new_<?php echo $field; ?>"></label>
+                        <button type="submit">✔️</button>
+                    </form>
+                </div>
+                <p id="el4" class="block_eng_plus">🌟 <?php 
+                    require "php/celect_course.php";
+                    while ($result = mysqli_fetch_assoc($sql3)) {
+                        echo $result[$field];    
+                    } 
+                ?></p>
+            <?php endforeach; ?>
 
-            while($result = mysqli_fetch_assoc($sql3)){
-                
-                echo $result['first_string'];    
-                
-            } ?></p>
-            <p class="block_eng_plus">	🌟 <?php 
-            require "php/celect_course.php";
-
-            while($result = mysqli_fetch_assoc($sql3)){
-                
-                echo $result['second_string'];    
-                
-            } ?></p>
-            <p class="block_eng_plus">	🌟 <?php 
-            require "php/celect_course.php";
-
-            while($result = mysqli_fetch_assoc($sql3)){
-                
-                echo $result['third_string'];    
-                
-            } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
-            <a href="#registr">Купить сейчас</a>
-            
+                <a href="#registr">Купить сейчас</a>
+                <button id="button" onclick="showhide4()">✍️</button>
+            </div>
         </div>
         
-        </div>
+      
         <div class="block_eng">
-            <p class="block_eng_right"><?php 
-            require "php/celect_course.php";
+            <div id="showhide5" class="block_eng_right eco blue showhide">
+                <form action="php/CourseUpdater4.php" method="GET">
+                    <input type="text" name="new_prefix_course">
+                    <button type="submit">✔️</button>       
+                </form>
+            </div>
+            <p id="el5" class="block_eng_right"><?php 
+                require "php/celect_course.php";
+                while ($result = mysqli_fetch_assoc($sql4)) {
+                    echo $result['prefix_course'];    
+                } 
+            ?> 🔥</p>
 
-            while($result = mysqli_fetch_assoc($sql4)){
-                
-                echo $result['prefix_course'];    
-                
-            } ?> 🔥</p>
-            <h3><?php 
-            require "php/celect_course.php";
+            <div id="showhide5" class="block_eng__left_top showhide gainsboro">
+                <form action="php/CourseUpdater4.php" method="GET">
+                    <input type="text" name="new_name_course">
+                    <button type="submit">✔️</button>
+                </form>
+            </div>
+            <h3 id="el5"><?php 
+                require "php/celect_course.php";
+                while ($result = mysqli_fetch_assoc($sql4)) {
+                    echo $result['name_course'];    
+                } 
+            ?></h3>
 
-            while($result = mysqli_fetch_assoc($sql4)){
-                
-                echo $result['name_course'];    
-                
-            } ?></h3>
-            <p class="block_eng_plus">	🌟 <?php 
-            require "php/celect_course.php";
+            <!-- Редактирование строк -->
+            <?php foreach ($fields as $field): ?>
+                <div id="showhide5" class="showhide gainsboro showhide_margin">
+                    <form action="php/CourseUpdater4.php" method="GET">
+                        <label for="">🌟<input type="text" name="new_<?php echo $field; ?>"></label>
+                        <button type="submit">✔️</button>
+                    </form>
+                </div>
+<p id="el5" class="block_eng_plus">🌟 <?php 
+                    require "php/celect_course.php";
+                    while ($result = mysqli_fetch_assoc($sql4)) {
+                        echo $result[$field];    
+                    } 
+                ?></p>
+            <?php endforeach; ?>
 
-            while($result = mysqli_fetch_assoc($sql4)){
-                
-                echo $result['first_string'];    
-                
-            } ?></p>
-            <p class="block_eng_plus">	🌟 <?php 
-            require "php/celect_course.php";
-
-            while($result = mysqli_fetch_assoc($sql4)){
-                
-                echo $result['second_string'];    
-                
-            } ?></p>
-            <p class="block_eng_plus">	🌟 <?php 
-            require "php/celect_course.php";
-
-            while($result = mysqli_fetch_assoc($sql4)){
-                
-                echo $result['third_string'];    
-                
-            } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
-            <a href="#registr">Купить сейчас</a>
-            
+                <a href="#registr">Купить сейчас</a>
+                <button id="button" onclick="showhide5()">✍️</button>
+            </div>
         </div>
-        
-        </div>
+
     </div>
 </div>
 
