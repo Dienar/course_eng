@@ -15,7 +15,7 @@
         <div class="question" id="question1">
             <h3>1. Choose the correct translation:</h3>
             <audio controls>
-                <source src="audio/question1.mp3" type="audio/mpeg">
+                <source src="audio/audio_1.ogg" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
             <label><input type="radio" name="q1" value="A"> Option A</label><br>
