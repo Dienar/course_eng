@@ -1,0 +1,356 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Хедер */
+.site-header {
+    background-color: #4CAF50;
+    padding: 1em 0;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-menu a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Основной контент */
+main {
+    padding: 2em;
+}
+
+h2 {
+    margin: 1em 0;
+    color: #333;
+}
+.all_conversation-test{
+    display: flex;
+}
+.conversation-test img{
+    width: 20em;
+}
+.conversation-test{
+    background-color: gainsboro;
+    padding-bottom: 2em;
+    border-radius: 15px;
+    padding: 1em 1em 1.5em;
+}
+.conversation-test img,p{
+    margin-bottom: 2em;
+    border-radius: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn.primary {
+    background-color: #4CAF50;
+    color: white;
+    margin-left: 2em;
+}
+
+.btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Карточки курсов */
+.course-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.course-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+}
+/* Main Container -  this controls the size of the circle */
+.course-card p{
+    margin-top: 1em;
+}
+.course-card button{
+    margin-top: 0.5em;
+}
+body{
+    background-color: rgba(225, 246, 233, 0.8);
+}
+a{
+    text-decoration: none;
+}
+button{
+    cursor: pointer;
+    transition: 0.5s;
+}
+button:hover{
+    box-shadow: 1px 2px 8px 5px rgba(34, 60, 80, 0.2);
+}
+
+
+.circle_container
+{
+	width : 40px;
+	height : 40px;
+	margin : 0;
+	padding : 0;
+/*	border : 1px solid red; */
+}
+.global_list_button_container{
+    display: flex;
+    margin-top: 1em;
+}
+.container_circle_text{
+    display: flex;
+    vertical-align: middle;
+}
+.circle_container
+{
+	width : 40px;
+	height : 40px;
+	margin : 0;
+	padding : 0;
+/*	border : 1px solid red; */
+}
+
+/* Circle Main draws the actual circle */
+.circle_main
+{
+	width : 100%;
+	height : 100%;
+	border-radius : 50%;
+	border : 6px solid lightsalmon;	/* can alter thickness and colour of circle on this line */
+	margin : 0;
+	padding : 0;
+}
+
+/* Circle Text Container - constrains text area to within the circle */
+.circle_text_container
+{
+	/* area constraints */
+	width : 70%;
+	height : 70%;
+	max-width : 70%;
+	max-height : 70%;
+	margin : 0;
+	padding : 0;
+
+	/* some position nudging to center the text area */
+	position : relative;
+	left : 15%;
+	top : 15%;
+	
+	/* preserve 3d prevents blurring sometimes caused by the text centering in the next class */
+	transform-style : preserve-3d;
+	
+	/*border : 1px solid green;*/
+}
+
+/* Circle Text - the appearance of the text within the circle plus vertical centering */
+.circle_text
+{
+	/* change font/size/etc here */
+	font: 33px "Tahoma", Arial, Serif;	
+	text-align : center;
+	color: #48b774;
+	/* vertical centering technique */
+	position : relative;
+	top : 50%;
+	transform : translateY(-50%);
+}
+.block_text{
+    font-weight: 800;
+    max-width: 83px;
+    max-height: 38px;
+    margin-left: 1.2em;
+    margin-top: 0.5em;
+    font-size: 25px;
+    vertical-align: middle;
+    display: inline;
+}
+.list_container{
+    display: flex;
+    justify-content: space-between;
+    width: 23em;
+    margin-left: 15em;
+    margin-top: 1.2em;
+    transition: 0,2s;
+
+}
+.list_container a:after {
+    display:block;
+    content: '';
+    border-bottom: solid 2px orange;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+  }
+.list_container a{
+    color: #4A4A4A;
+    font-family: 'Poppins', sans-serif;
+
+    
+}
+.list_container a:hover:after{
+    transform: scaleX(1);
+}
+.register_container{
+    margin-left: 15.5em;
+    margin-right: 12em;
+    margin-top: 1.2em;
+
+    
+}
+.register_container button{
+    text-decoration: none;
+    width: 7em;
+    height: 3em;
+    border-radius: 20px;
+    background-color:#48b774;
+    color: white;
+    border: none;
+
+}
+
+/* Футер */
+.container_circle_text{
+    display: flex;
+    vertical-align: middle;
+}
+.circle_container
+{
+	width : 40px;
+	height : 40px;
+	margin : 0;
+	padding : 0;
+/*	border : 1px solid red; */
+}
+
+/* Circle Main draws the actual circle */
+.circle_main
+{
+	width : 100%;
+	height : 100%;
+	border-radius : 50%;
+	border : 6px solid lightsalmon;	/* can alter thickness and colour of circle on this line */
+	margin : 0;
+	padding : 0;
+}
+
+/* Circle Text Container - constrains text area to within the circle */
+.circle_text_container
+{
+	/* area constraints */
+	width : 70%;
+	height : 70%;
+	max-width : 70%;
+	max-height : 70%;
+	margin : 0;
+	padding : 0;
+
+	/* some position nudging to center the text area */
+	position : relative;
+	left : 15%;
+	top : 15%;
+	
+	/* preserve 3d prevents blurring sometimes caused by the text centering in the next class */
+	transform-style : preserve-3d;
+	
+	/*border : 1px solid green;*/
+}
+
+/* Circle Text - the appearance of the text within the circle plus vertical centering */
+.circle_text
+{
+	/* change font/size/etc here */
+	font: 33px "Tahoma", Arial, Serif;	
+	text-align : center;
+	color: #48b774;
+	/* vertical centering technique */
+	position : relative;
+	top : 50%;
+	transform : translateY(-50%);
+}
+.list_container_a{
+    font-weight: 800;
+    width: 100%;
+    margin-top: 0.5em;
+    font-size: 25px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
+
+}
+.list_container_a a{
+    transition: all 0.5s;
+    color: rgb(116, 116, 116);
+    font-size: 0.7em;
+    
+}
+.list_container_a p{
+    transition: 0.5s;
+    color: rgb(116, 116, 116);
+    font-size: 0.7em;
+
+}
+.list_container_a a:hover{
+    color: rgb(162, 160, 160);
+    
+}
+.list_container_a a:after {
+    display:block;
+    content: '';
+    
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}  
+.bottom_block {
+    padding-left: 2em;
+    background-color: #1f212b;
+    height: 100%;
+    padding-top: 2em;
+    padding-bottom: 3em;
+    margin-right: 0em;
+}
+.list_container_a a:hover:after { transform: scaleX(1); }
+.btn.primary.unactive{
+    background-color: #4A4A4A;
+    cursor: default;
+}
+

@@ -75,6 +75,22 @@
 	<script src="js/mask.js" data-autoinit="true"></script>
 	<script type="text/javascript" src="js/payment.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("form").addEventListener("submit", function(event) {
+        let courseId = localStorage.getItem("course_id");
+        if (courseId) {
+            let hiddenInput = document.createElement("input");
+            hiddenInput.type = "hidden";
+            hiddenInput.name = "course_id";
+            hiddenInput.value = courseId;
+            this.appendChild(hiddenInput);
+        } else {
+            console.log("course_id не найден в localStorage");
+        }
+    });
+});
+</script>
 <script>
   $(document).ready(function(){
     $('#expiration').mask('00/00');

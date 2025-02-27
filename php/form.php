@@ -8,6 +8,6 @@ $result=$mysqli->query($query);
 if($result){
     echo "Успех";
 }else{
-    echo "ПИЗДЕЦ";
+    echo "ошибка";
 }
 $mysqli->close();
