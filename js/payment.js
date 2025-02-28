@@ -22,6 +22,20 @@ var count = 15;
 document.addEventListener('DOMContentLoaded', () => {
   start();
 });
+
+function Reg_or_not()
+{
+  var Reg_or_not = localStorage.getItem('Reg_or_Not');
+  if(Reg_or_not === null){
+     Swal.fire({
+      title: "Вы не вошли в аккаунт",
+      icon: "error",
+      draggable: true
+    });
+  }else{ 
+    window.location.href = "../landing_eng/user.client/index.php";
+  }
+}
 function start() {
  
   // если таймер уже запущен — выходим из функции

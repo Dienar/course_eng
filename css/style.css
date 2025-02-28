@@ -9,6 +9,12 @@ html{
 body{
     background-color: rgba(225, 246, 233, 0.8);
 }
+div:where(.swal2-container).swal2-center>.swal2-popup {
+    grid-column: 2;
+    grid-row: 2;
+    place-self: center center;
+    margin: 0 auto;
+}
 a{
     text-decoration: none;
 }

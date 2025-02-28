@@ -35,7 +35,6 @@
     </div>
 </div>
     <main>
-
         <!-- Разговорный тест -->
          <div class="all_conversation-test">
         <section class="conversation-test">

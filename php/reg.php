@@ -29,11 +29,21 @@ $set->bind_param("ss", $email, $phone);
 $set->execute();
 $set->store_result(); // Также нужно вызвать store_result()
 
+echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+
 if ($set->num_rows > 0) {
     echo "<script>
-            alert('Вы уже получили подарок =(');
-            setTimeout(function() { location.replace('../index.php'); }, 0);
-          </script>";
+    var Reg_or_not = localStorage.setItem('Reg_or_Not',2);
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                title: 'Поздравляю! Вы вошли в аккаунт!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.replace('../index.php');
+            });
+        });
+    </script>";
 } else {
     // Вставляем нового пользователя
     $query = $mysqli->prepare("INSERT INTO users (name, email, phone) VALUES (?, ?, ?)");
@@ -43,9 +53,17 @@ if ($set->num_rows > 0) {
     if ($result) {
         $_SESSION['user_role'] = 'user';
         echo "<script>
-                alert('Вы получили подарок =)');
-                setTimeout(function() { location.replace('../index.php'); }, 0);
-              </script>";
+        localStorage.setItem('Reg_or_Not',2);
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                title: 'Поздравляю! Вы создали аккаунт!',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.replace('../index.php');
+            });
+        });
+    </script>";
     } else {
         echo "Ошибка при регистрации.";
     }

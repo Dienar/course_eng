@@ -50,7 +50,7 @@
     <a href="">Помощь</a>
     <a href="">О нас</a>
 </div>
-<div class="register_container"><a href="../landing_eng/user.client/index.php"><i class="fa-solid fa-user-tie"></i> Profile</a>
+<div class="register_container" ><a href="#" onclick="Reg_or_not()"><i class="fa-solid fa-user-tie"></i> Profile</a>
 </div>
 </div><div class="img__container__start">
         <img src="img/women__ready.png" alt="">
@@ -344,7 +344,7 @@
         <div class="right_block_bonus_text checkbox_label">
         <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes" required><label for="happy">Даю согласие на обработу персональных данных</label></div>
         <div class="right_block_bonus_text_submit_button">
-        <input type="submit" value="Получить подарок"></div>
+        <input type="submit" value="Войти"></div>
     </form>
 </div>
 </div>
