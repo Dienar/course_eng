@@ -52,6 +52,12 @@ h2 {
     margin: 1em 0;
     color: #333;
 }
+.empty_course{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 16.5em;
+}
+
 .all_conversation-test{
     display: flex;
 }
@@ -80,14 +86,17 @@ h2 {
 .btn.primary {
     background-color: #4CAF50;
     color: white;
-    margin-left: 2em;
+    display: flex;
+    justify-content: center;
 }
 
 .btn:hover {
     background-color: #45a049;
     transform: translateY(-2px);
 }
-
+.empty_course.btn.primary{
+    margin: 0 auto;
+}
 /* Карточки курсов */
 .course-list {
     display: flex;
@@ -115,6 +124,7 @@ body{
 }
 a{
     text-decoration: none;
+    color:#1f212b;
 }
 button{
     cursor: pointer;

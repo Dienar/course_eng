@@ -476,7 +476,6 @@ button:hover{
 .block_right_test_course button{
     background-color: rgb(230, 101, 50);
     width: 10em;
-    margin-top: 0.6em;
     padding: 0.8em;
     border-radius: 10px;
     font-size: 1.2em;

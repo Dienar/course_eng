@@ -37,14 +37,24 @@ function Reg_or_not()
   }
 }
 
-function Reg_or_not2()
-{
+function Reg_or_not2() {
+  
   var Reg_or_not = localStorage.getItem('Reg_or_Not');
-  if(Reg_or_not === null){
-     alert('Вы не вошли в аккаунт чтобы из него выйти');
-  }else{
-    alert('Вы вышли из аккаунта!')
-  localStorage.removeItem('Reg_or_Not');
+  if (Reg_or_not === null) {
+      alert("Вы не вошли в аккаунт чтобы из него выйти");
+  } else {
+      alert("Вы вышли из аккаунта!");
+      localStorage.removeItem('Reg_or_Not');
+
+      // Отправляем запрос на сервер для завершения сессии
+      fetch('../landing_eng/php/logoutforuser.php')
+          .then(response => {
+              if (response.ok) {
+                  console.log("Сессия завершена");
+                  window.location.href = "../landing_eng/index.php";
+              }
+          })
+          .catch(error => console.error("Ошибка:", error));
   }
 }
 function start() {

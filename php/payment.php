@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . "/connoop.php";
-
+session_start();
 class payment extends conn
 {
     private $fullname;
@@ -43,13 +43,14 @@ class payment extends conn
         $stmt->bind_param("ssssssi", $this->fullname, $this->email, $this->city, $this->index, $this->nameoncart, $this->cartnum, $this->course_id);
 
         $result = $stmt->execute();
-
+        
         if (!$result) {
             echo "<script>
                 alert('Ошибка при оформлении покупки: " . $stmt->error . "');
                 window.location.replace('../index.php');
             </script>";
         } else {
+            $_SESSION['email'] = $this->email;
             echo "<script>
                 alert('Покупка успешно оформлена!');
                 window.location.replace('../user.client/index.php');
