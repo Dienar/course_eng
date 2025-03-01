@@ -38,7 +38,7 @@ function Reg_or_not()
 }
 
 function Reg_or_not2() {
-  
+
   var Reg_or_not = localStorage.getItem('Reg_or_Not');
   if (Reg_or_not === null) {
       alert("Вы не вошли в аккаунт чтобы из него выйти");
@@ -139,7 +139,7 @@ function closeSess(){
     cancelButtonText : "Назад"
   }).then((result) => {
     if (result.isConfirmed) {
-      window.location.replace("index.php");
+      window.location.replace("index_loged.php");
       localStorage.getItem('cost') = 0;
     }
   });

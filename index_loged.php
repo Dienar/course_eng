@@ -50,7 +50,7 @@
     <a href="">Помощь</a>
     <a href="">О нас</a>
 </div>
-<div class="register_container" ><a href="#login" ><i class="fa-solid fa-user-tie"></i> Profile</a> 
+<div class="register_container" ><a href="#" onclick="Reg_or_not()"><i class="fa-solid fa-user-tie"></i> Profile</a> 
 <a href="" id="exit" onclick="Reg_or_not2()"><i class="fa-solid fa-right-from-bracket"></i></a>
 </div>
 </div><div class="img__container__start">
@@ -125,7 +125,7 @@
             } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
-            <a href="#login">Купить сейчас</a>
+            <a onclick="course1()">Купить сейчас</a>
         </div>
         </div>
         <div class="block_eng">
@@ -172,7 +172,7 @@
             } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
-            <a href="#login">Купить сейчас</a>
+            <a onclick="course2()">Купить сейчас</a>
             
         </div>
         
@@ -220,7 +220,7 @@
             } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
-            <a href="#login">Купить сейчас</a>
+            <a onclick="course3()">Купить сейчас</a>
         </div>
         </div>
         <div class="block_eng">
@@ -266,7 +266,7 @@
             } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
-            <a href="#login">Купить сейчас</a>
+            <a onclick="course4()">Купить сейчас</a>
         </div>
         </div>
     </div>

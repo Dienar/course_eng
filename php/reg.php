@@ -32,7 +32,7 @@ $set->store_result(); // Также нужно вызвать store_result()
 echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
 
 if ($set->num_rows > 0) {
-
+    $_SESSION['email'] = $email;
     echo "<script>
     var Reg_or_not = localStorage.setItem('Reg_or_Not',2);
         document.addEventListener('DOMContentLoaded', function() {
@@ -41,7 +41,7 @@ if ($set->num_rows > 0) {
                 icon: 'success',
                 confirmButtonText: 'OK'
             }).then(() => {
-                window.location.replace('../index.php');
+                window.location.replace('../index_loged.php');
             });
         });
     </script>";
@@ -52,6 +52,7 @@ if ($set->num_rows > 0) {
     $result = $query->execute();
 
     if ($result) {
+        $_SESSION['email'] = $email;
         $_SESSION['user_role'] = 'user';
         echo "<script>
         localStorage.setItem('Reg_or_Not',2);
@@ -61,7 +62,7 @@ if ($set->num_rows > 0) {
                 icon: 'success',
                 confirmButtonText: 'OK'
             }).then(() => {
-                window.location.replace('../index.php');
+                window.location.replace('../index_loged.php');
             });
         });
     </script>";

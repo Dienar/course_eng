@@ -31,7 +31,7 @@
         <a href="">Помощь</a>
         <a href="">О нас</a>
     </div>
-    <div class="register_container"><a href="../index.php"><i class="fa-solid fa-right-from-bracket"></i> Exit</a>
+    <div class="register_container"><a href="../index_loged.php"><i class="fa-solid fa-right-from-bracket"></i> Exit</a>
     </div>
 </div>
     <main>
@@ -45,7 +45,7 @@
             <h2>Добро пожаловать в ваш личный кабинет !</h2>
             <p id='question'>Здесь вы можете увидеть все ваши купленные курсы.</p>
             <p id='question'>Для того чтобы совершить покупку, просто зайдите на главную страницу.</p>
-            <a class='btn primary' href='../index.php'>Перейти в магазин</a>
+            <a class='btn primary' href='../index_loged.php'>Перейти в магазин</a>
             </section>";
         }else{
         $email = $_SESSION['email'];
@@ -54,7 +54,6 @@
         $sql->execute();
         $all_courses = $sql->get_result();
         while($row = $all_courses->fetch_assoc()){
-            echo $row['course_id'];
             switch ($row['course_id']){
                 case 1:
                     echo "
@@ -62,7 +61,7 @@
             <h2>Разговорный тест</h2>
             <img src='https://avatars.mds.yandex.net/i?id=33338c34eb85f1d4b743bebab17c9f50b7e93d98-9182046-images-thumbs&n=13' alt=''>
             <p id='question'>Нажмите 'Начать тест', чтобы начать.</p>
-            <a class='btn primary unactive' href='#'>Начать тест</a>
+            <a class='btn primary' href='#'>Начать тест</a>
             </section>";
                     break;
                 case 2:
@@ -71,7 +70,7 @@
             <h2>Уровень носителя</h2>
             <img src='https://sun9-32.userapi.com/impg/QFiJ8UEzUjCZPiS7L-jNW6d0Uf3ups1VV0cCow/O7NUfX6rY8s.jpg?size=480x320&quality=95&sign=dcedafdf2937bf90d49f2c2b2b1658e0&type=album' alt=''>
             <p id='question'>Нажмите 'Начать тест', чтобы начать.</p>
-            <a class='btn primary unactive'  href='#'>Начать тест</a>
+            <a class='btn primary'  href='#'>Начать тест</a>
             </section>";
                     break; 
                 case 3:

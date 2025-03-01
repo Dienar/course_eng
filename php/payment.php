@@ -42,12 +42,19 @@ class payment extends conn
         $stmt = $mysqli->prepare("INSERT INTO users_purchases (name, email, sity, index_user, nameoncart, cartnum, course_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssssi", $this->fullname, $this->email, $this->city, $this->index, $this->nameoncart, $this->cartnum, $this->course_id);
 
-        $result = $stmt->execute();
         
+        $email_loged = $_SESSION['email'];
+        if($this->email != $email_loged){
+            echo "<script>
+            alert('Ошибка при оформлении покупки: укажите email при регистрции');
+            window.location.replace('../index_loged.php');
+        </script>";
+        }else{
+        $result = $stmt->execute();
         if (!$result) {
             echo "<script>
                 alert('Ошибка при оформлении покупки: " . $stmt->error . "');
-                window.location.replace('../index.php');
+                window.location.replace('../index_loged.php');
             </script>";
         } else {
             $_SESSION['email'] = $this->email;
@@ -57,6 +64,8 @@ class payment extends conn
             </script>";
         }
     }
+    }
+
 }
 
 $payment = new payment();

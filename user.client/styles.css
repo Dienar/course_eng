@@ -60,15 +60,19 @@ h2 {
 
 .all_conversation-test{
     display: flex;
+    flex-wrap: wrap;
 }
 .conversation-test img{
-    width: 20em;
+    width: 30em;
 }
 .conversation-test{
     background-color: gainsboro;
     padding-bottom: 2em;
     border-radius: 15px;
     padding: 1em 1em 1.5em;
+    margin-top: 1em;
+    width: 30em;
+
 }
 .conversation-test img,p{
     margin-bottom: 2em;
@@ -81,6 +85,7 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s, transform 0.1s;
+    height: 2em;
 }
 
 .btn.primary {
