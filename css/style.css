@@ -18,6 +18,14 @@ div:where(.swal2-container).swal2-center>.swal2-popup {
 a{
     text-decoration: none;
 }
+div:where(.swal2-container).swal2-top, div:where(.swal2-container).swal2-center, div:where(.swal2-container).swal2-bottom {
+    margin: 0 auto;
+}
+#exit{
+    display: block;
+    width: 4em;
+    margin-left: 1em;
+}
 button{
     cursor: pointer;
     transition: 0.5s;

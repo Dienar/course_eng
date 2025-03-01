@@ -32,6 +32,7 @@ $set->store_result(); // Также нужно вызвать store_result()
 echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
 
 if ($set->num_rows > 0) {
+
     echo "<script>
     var Reg_or_not = localStorage.setItem('Reg_or_Not',2);
         document.addEventListener('DOMContentLoaded', function() {

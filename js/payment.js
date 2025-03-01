@@ -36,6 +36,17 @@ function Reg_or_not()
     window.location.href = "../landing_eng/user.client/index.php";
   }
 }
+
+function Reg_or_not2()
+{
+  var Reg_or_not = localStorage.getItem('Reg_or_Not');
+  if(Reg_or_not === null){
+     alert('Вы не вошли в аккаунт чтобы из него выйти');
+  }else{
+    alert('Вы вышли из аккаунта!')
+  localStorage.removeItem('Reg_or_Not');
+  }
+}
 function start() {
  
   // если таймер уже запущен — выходим из функции
