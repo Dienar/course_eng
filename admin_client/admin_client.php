@@ -5,10 +5,12 @@ require_once '../php/conn.php'; // Подключение к базе данны
 $sql = "SELECT * FROM users";
 $sql2 = "SELECT * FROM users_purchases";
 $sql3 = "SELECT * FROM user_message";
+$sql4 = "SELECT * FROM user_progress";
 
 $result = $mysqli->query($sql);
 $result2 = $mysqli->query($sql2);
 $result3 = $mysqli->query($sql3);
+$result4 = $mysqli->query($sql4);
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +58,7 @@ $result3 = $mysqli->query($sql3);
         <th>Имя на карте</th>
         <th>Номер карты</th>
         <th>ID курса</th>
+        <th>Действия</th>
     </tr>
     <?php while ($row = $result2->fetch_assoc()): ?>
     <tr>
@@ -67,6 +70,9 @@ $result3 = $mysqli->query($sql3);
         <td><?= htmlspecialchars($row['nameoncart']) ?></td>
         <td><?= htmlspecialchars($row['cartnum']) ?></td>
         <td><?= htmlspecialchars($row['course_id']) ?></td>
+        <td class="actions">
+            <a href="delete_purchase.php?id=<?= $row['id'] ?>" class="delete" onclick="return confirm('Удалить покупку?')">Удалить</a>
+        </td>
     </tr>
     <?php endwhile; ?>
 </table>
@@ -78,16 +84,39 @@ $result3 = $mysqli->query($sql3);
         <th>ID пользователя</th>
         <th>Email пользователя</th>
         <th>Сообщение</th>
+        <th>Действия</th>
     </tr>
     <?php while ($row = $result3->fetch_assoc()): ?>
     <tr>
         <td><?= $row['id'] ?></td>
-        <td><?= htmlspecialchars($row['name.id']) ?></td>
+        <td><?= htmlspecialchars($row['user_id']) ?></td>
         <td><?= htmlspecialchars($row['email.id']) ?></td>
         <td><?= htmlspecialchars($row['message']) ?></td>
+        <td class="actions">
+            <a href="delete_message.php?id=<?= $row['id'] ?>" class="delete" onclick="return confirm('Удалить сообщение?')">Удалить</a>
+        </td>
     </tr>
     <?php endwhile; ?>
 </table>
-
+<h2>Прогресс пользователей</h2>
+<table>
+    <tr>
+        <th>ID пользователя</th>
+        <th>Процент выплнения теста</th>
+        <th>Ответы</th>
+        <th>Действия</th>
+    </tr>
+    <?php while ($row = $result4->fetch_assoc()): ?>
+    <tr>
+        <td><?= htmlspecialchars($row['user_id']) ?></td>
+        <td><?= htmlspecialchars($row['progress']) ?></td>
+        <td><?= htmlspecialchars($row['answers']) ?></td>
+        <td class="actions">
+            <a href="?id=<?= $row['user_id'] ?>" class="edit" onclick="alert('В разработке')">Редактировать</a>
+            <a href="delete_user_progress.php?id=<?= $row['user_id'] ?>" class="delete" onclick="return confirm('Удалить пользователя?')">Удалить</a>
+        </td>
+    </tr>
+    <?php endwhile; ?>
+</table>
 </body>
 </html>
