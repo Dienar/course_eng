@@ -11,14 +11,6 @@
 <link rel="manifest" href="/site.webmanifest">
     <script src="jquery-3.7.1.min.js"></script>
     <script>
-                $(document).ready(function(){
-        $("#ajax_form").on('submit',function(event){
-            event.preventDefault();
-            $.post("php/form.php", $(this).serialize());
-            event.target.reset();
-            alert("Ваше сообщение отправлено");
-        })
-        })
         $(document).ready(function(){
         $("#registr").on('submit',function(event){
             event.preventDefault();
@@ -72,7 +64,7 @@
 <div class="text_container_start_bold__input">
     <input type="text" name="message" id="message" required maxlength="100"
     placeholder="Есть какие то вопросы ? Ответим за 15 минут">
-    <button type="submit" class="text_container_start_bold__input__img">➤</button>
+    <button type="submit" class="text_container_start_bold__input__img"><a href="#login">➤</a></button>
 </form>
 </div>
 </div>

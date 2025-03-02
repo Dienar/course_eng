@@ -28,7 +28,7 @@ class payment extends conn
         $stmt->bind_param("si", $this->email, $this->course_id);
         $stmt->execute();
         $stmt->store_result();
-
+        
         if ($stmt->num_rows > 0) {
             // Если курс уже куплен, показываем alert и отправляем на index.php
             echo "<script>

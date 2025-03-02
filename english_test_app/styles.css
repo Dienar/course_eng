@@ -13,7 +13,19 @@ h1 {
     font-size: 3em;
     margin-bottom: 20px;
 }
+#clearButton3 {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+#clearButton3:hover {
+  background-color: #ff1a1a;
+}
 .question {
     background: #fff;
     border-radius: 10px;

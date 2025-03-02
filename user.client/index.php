@@ -35,11 +35,32 @@
     </div>
 </div>
     <main>
-        
+        <!-- Прогрессбар -->
+
+
+        <?php
+session_start();
+require_once "../php/conn.php";
+
+$user_id = $_SESSION['user_id'];
+
+$stmt = $mysqli->prepare("SELECT progress FROM user_progress WHERE user_id = ?");
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+
+$progress = $row ? $row['progress'] : 0;
+
+?>
+
+
+
+
         <!-- Разговорный тест -->
          <div class="all_conversation-test"><?php
         require_once "../php/conn.php";
-        session_start();
+       
         if($_SESSION['email'] === null){
             echo "<section class='conversation-test empty_course'>
             <h2>Добро пожаловать в ваш личный кабинет !</h2>
@@ -76,20 +97,28 @@
                 case 3:
                     echo "
             <section class='conversation-test'>
-            <h2>Разговорный тест</h2>
-            <img src='https://avatars.mds.yandex.net/i?id=845e4d24432e04ef83d0a78b0ea2ddd1f53bd43a-12935885-images-thumbs&n=13' alt=''>
-            <p id='question'>Нажмите 'Начать тест', чтобы начать.</p>
-            <a class='btn primary' href='../english_test_app/index.php'>Начать тест</a>
-            </section>";
+        <h2>Разговорный тест</h2>
+        <img src='https://avatars.mds.yandex.net/i?id=845e4d24432e04ef83d0a78b0ea2ddd1f53bd43a-12935885-images-thumbs&n=13' alt=''>
+        
+        <p id='question'>Нажмите 'Начать тест', чтобы начать.</p>
+        <div class='progress-bar'>
+    <div class='progress' id='userProgress' style='width: <?php echo $progress; ?>%;'></div>
+</div>
+
+        <a class='btn primary' href='../english_test_app/index.php'>Начать тест</a>
+        </section>";
                     break; 
                 case 4:
                      echo "
             <section class='conversation-test'>
-            <h2>Разговорный тест</h2>
-            <img src='https://avatars.mds.yandex.net/i?id=845e4d24432e04ef83d0a78b0ea2ddd1f53bd43a-12935885-images-thumbs&n=13' alt=''>
-            <p id='question'>Нажмите 'Начать тест', чтобы начать.</p>
-            <a class='btn primary' href='../english_test_app/index.php'>Начать тест</a>
-            </section>";
+    <h2>Разговорный тест</h2>
+    <img src='https://avatars.mds.yandex.net/i?id=845e4d24432e04ef83d0a78b0ea2ddd1f53bd43a-12935885-images-thumbs&n=13' alt=''>
+    <p id='question'>Нажмите 'Начать тест', чтобы начать.</p>
+    <div class='progress-bar'>
+        <div class='progress' id='testProgress'></div>
+    </div>
+    <a class='btn primary' href='../english_test_app/index.php'>Начать тест</a>
+</section>";
                     break;
                     default:
                     echo "Вы еще не приобрели ни одного урока";
@@ -148,5 +177,8 @@
         </div></div>
 
     <script src="scripts.js"></script>
+    <script>
+    document.getElementById('userProgress').style.width = '<?php echo $progress; ?>%';
+</script>
 </body>
 </html>

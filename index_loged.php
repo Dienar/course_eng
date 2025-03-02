@@ -11,14 +11,17 @@
 <link rel="manifest" href="/site.webmanifest">
     <script src="jquery-3.7.1.min.js"></script>
     <script>
-                $(document).ready(function(){
-        $("#ajax_form").on('submit',function(event){
-            event.preventDefault();
-            $.post("php/form.php", $(this).serialize());
-            event.target.reset();
+                $(document).ready(function() {
+    $("#ajax_form").on('submit', function(event) {
+        event.preventDefault();
+        $.post("php/form.php", $(this).serialize(), function(response) {
+            console.log(response); // Отладка ответа от сервера
             alert("Ваше сообщение отправлено");
-        })
-        })
+        });
+        event.target.reset();
+    });
+});
+        
         $(document).ready(function(){
         $("#registr").on('submit',function(event){
             event.preventDefault();
