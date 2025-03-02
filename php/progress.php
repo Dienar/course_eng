@@ -11,10 +11,13 @@ $user_id = $_SESSION['user_id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $progress = isset($_POST['progress']) ? intval($_POST['progress']) : 0;
+    $answers = isset($_POST['answers']) ? json_encode($_POST['answers']) : null;
 
-    $stmt = $mysqli->prepare("INSERT INTO user_progress (user_id, progress) 
-                              VALUES (?, ?) ON DUPLICATE KEY UPDATE progress = ?");
-    $stmt->bind_param("iii", $user_id, $progress, $progress);
+    $stmt = $mysqli->prepare("INSERT INTO user_progress (user_id, progress, answers) 
+                              VALUES (?, ?, ?) 
+                              ON DUPLICATE KEY UPDATE progress = VALUES(progress), answers = VALUES(answers)");
+    $stmt->bind_param("iis", $user_id, $progress, $answers);
+
     if ($stmt->execute()) {
         echo json_encode(["status" => "success", "progress" => $progress]);
     } else {
@@ -24,13 +27,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $stmt = $mysqli->prepare("SELECT progress FROM user_progress WHERE user_id = ?");
+    $stmt = $mysqli->prepare("SELECT progress, answers FROM user_progress WHERE user_id = ?");
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
     $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
 
-    echo json_encode(["progress" => $row ? $row['progress'] : 0]);
+    if ($row = $result->fetch_assoc()) {
+        echo json_encode(["progress" => $row['progress'], "answers" => json_decode($row['answers'], true)]);
+    } else {
+        // Если данных нет, создаем запись с 0 прогресса и пустыми ответами
+        $stmt = $mysqli->prepare("INSERT INTO user_progress (user_id, progress, answers) VALUES (?, 0, NULL)");
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        echo json_encode(["progress" => 0, "answers" => []]);
+    }
     exit;
 }
+
 ?>
