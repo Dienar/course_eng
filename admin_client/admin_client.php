@@ -82,17 +82,18 @@ $result4 = $mysqli->query($sql4);
     <tr>
         <th>ID</th>
         <th>ID пользователя</th>
-        <th>Email пользователя</th>
         <th>Сообщение</th>
+        <th>Решение</th>
         <th>Действия</th>
     </tr>
     <?php while ($row = $result3->fetch_assoc()): ?>
     <tr>
         <td><?= $row['id'] ?></td>
         <td><?= htmlspecialchars($row['user_id']) ?></td>
-        <td><?= htmlspecialchars($row['email.id']) ?></td>
         <td><?= htmlspecialchars($row['message']) ?></td>
+        <td><?= htmlspecialchars($row['decision']) ?></td>
         <td class="actions">
+            <a href="decision.php?id=<?= $row['id'] ?>" class="edit" onclick="return confirm('Сообщение решено?')">Решить</a>
             <a href="delete_message.php?id=<?= $row['id'] ?>" class="delete" onclick="return confirm('Удалить сообщение?')">Удалить</a>
         </td>
     </tr>

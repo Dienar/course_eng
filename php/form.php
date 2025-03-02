@@ -16,19 +16,19 @@ if (!isset($_POST['message'])) {
 
 $messageform = $_POST['message'];
 $user_id = $_SESSION['user_id'];
-
+$decision = "Не решен";
 // Отладка: выводим данные
 echo "Сообщение: " . $messageform . "<br>";
 echo "User ID: " . $user_id . "<br>";
 
 // Подготовленный запрос для защиты от SQL-инъекций
-$stmt = $mysqli->prepare("INSERT INTO user_message (message, user_id) VALUES (?, ?)");
+$stmt = $mysqli->prepare("INSERT INTO user_message (message, user_id,decision) VALUES (?, ?,?)");
 if ($stmt === false) {
     echo "Ошибка подготовки запроса: " . $mysqli->error;
     exit();
 }
 
-$stmt->bind_param("si", $messageform, $user_id);
+$stmt->bind_param("sis", $messageform, $user_id,$decision);
 if ($stmt->execute()) {
     echo "Успех";
 } else {
