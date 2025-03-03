@@ -8,6 +8,7 @@ html {
 }
 body{
     background-color: rgba(225, 246, 233, 0.8);
+    overflow-x: hidden;
 }
 div:where(.swal2-container).swal2-center>.swal2-popup {
     grid-column: 2;
@@ -210,6 +211,9 @@ button:hover{
     background-color: #1c9f41;
     box-shadow: 0px 0px 0px ;
     color: black;
+}
+.text_container_start_bold__input__img a{
+    color: white;
 }
 .text_container_start_bold__input{
     background-color: white;
@@ -559,6 +563,7 @@ button:hover{
     margin-top: 3em;
     margin-bottom: 5em;
     width: 85em;
+    box-sizing: border-box;
     height: 27em;
     background: linear-gradient(#2671c8,black);
     border-radius: 15px;
@@ -599,26 +604,57 @@ display: inline;
     padding-left: 3.5em;
     padding-right: 3.5em;
 }
-.right_block_bonus{
+.right_block_bonus {
     width: 25em;
     display: inline-block;
-    
-}
-.right_block_bonus input{
-    font-family: 'StratosSkyeng', Arial, sans-serif;
-    padding: 0.5em;
-    font-size: 1.5em;
-    outline: none;
-    border: none;
-    margin-left: 0;
-    border-radius: 15px;
-}
-.right_block_bonus_text{
-    margin-top: 1em;
-    background-color: white;
-    margin-left: 0;
+    padding: 1em;
+    background: #f9f9f9;
     border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.right_block_bonus input {
+    font-family: 'StratosSkyeng', Arial, sans-serif;
+    padding: 0.7em;
+    font-size: 1.2em;
+    width: calc(100% - 1.5em); /* Учитываем padding, чтобы не выходило за границы */
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Исправляет проблему выхода за границы */
+}
+
+.right_block_bonus input:focus {
+    border: 2px solid #FF6F61; /* Красивый акцентный цвет */
+    box-shadow: 0px 0px 10px rgba(255, 111, 97, 0.7);
+    background: #ffffff;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.right_block_bonus_text {
+    margin-top: 1em;
+   
+}
+
+.right_block_bonus_text_submit_button input {
+    background: #FF6F61;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    padding: 0.7em;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+   
+}
+
+.right_block_bonus_text_submit_button input:hover {
+    background: #e14b3b;
+    transform: scale(1.05);
+}
+
 .first_block{
     margin-top: 2em;
 }
@@ -659,6 +695,7 @@ display: inline;
     transform: scale(1.5);
 }
 .right_block_bonus .right_block_bonus_text_submit_button input{
+
     background-color: rgb(230, 101, 50);
     color: white;
     font-weight: 600;
