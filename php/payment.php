@@ -6,9 +6,8 @@ class payment extends conn
 {
     private $fullname;
     private $email;
-    private $city;
-    private $index;
-    private $nameoncart;
+    
+
     private $cartnum;
     private $course_id;
 
@@ -17,9 +16,9 @@ class payment extends conn
         $mysqli = $this->Mysqli();
         $this->fullname = $_POST['name'];
         $this->email = $_POST['email'];
-        $this->city = $_POST['city'];
-        $this->index = $_POST['index_user'];
-        $this->nameoncart = $_POST['nameoncart'];
+      
+        
+        
         $this->cartnum = $_POST['cartnum'];
         $this->course_id = $_POST['course_id']; // Получаем course_id
 
@@ -33,14 +32,14 @@ class payment extends conn
             // Если курс уже куплен, показываем alert и отправляем на index.php
             echo "<script>
                 alert('Ошибка: Вы уже приобрели этот курс.');
-                window.location.replace('../index.php');
+                window.location.replace('../');
             </script>";
             exit();
         }
 
         // Если курс не куплен, добавляем запись в базу
-        $stmt = $mysqli->prepare("INSERT INTO users_purchases (name, email, sity, index_user, nameoncart, cartnum, course_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssssi", $this->fullname, $this->email, $this->city, $this->index, $this->nameoncart, $this->cartnum, $this->course_id);
+        $stmt = $mysqli->prepare("INSERT INTO users_purchases (name, email, cartnum, course_id) VALUES ( ?, ?, ?, ?)");
+        $stmt->bind_param("sssi", $this->fullname, $this->email, $this->cartnum, $this->course_id);
 
         
         $email_loged = $_SESSION['email'];
@@ -60,7 +59,7 @@ class payment extends conn
             $_SESSION['email'] = $this->email;
             echo "<script>
                 alert('Покупка успешно оформлена!');
-                window.location.replace('../user.client/index.php');
+                window.location.replace('../user.client/');
             </script>";
         }
     }

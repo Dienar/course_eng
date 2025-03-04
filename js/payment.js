@@ -15,7 +15,7 @@ window.addEventListener('beforeunload', function(event) {
   event.preventDefault();
   alert('Страница перезагружается!');
 });
-var count = 15;
+var count = 60;
 // запущен таймер или нет
 
 // запуск таймера по кнопке
@@ -33,7 +33,7 @@ function Reg_or_not()
       draggable: true
     });
   }else{ 
-    window.location.href = "../landing_eng/user.client/index.php";
+    window.location.href = "../landing_eng/user.client/";
   }
 }
 
@@ -51,16 +51,16 @@ function Reg_or_not2() {
           .then(response => {
               if (response.ok) {
                   console.log("Сессия завершена");
-                  window.location.href = "../landing_eng/index.php";
+                  window.location.href = "../landing_eng/";
               }
           })
           .catch(error => console.error("Ошибка:", error));
   }
 }
 function start() {
- 
+
   // если таймер уже запущен — выходим из функции
-  document.getElementById("timer").innerHTML = " " + "14" + ":" + "59";
+  document.getElementById("timer").innerHTML ="Оставшееся время" + " " + "59" + ":" + "59";
   // запоминаем время нажатия
   var start_time = new Date();
   // получаем время окончания таймера
@@ -78,7 +78,7 @@ function start() {
     // если значение текущей секунды меньше 10, добавляем вначале ведущий ноль
     sec = sec < 10 ? "0" + sec : sec;
     // отправляем значение таймера на страницу в нужный раздел
-    document.getElementById("timer").innerHTML =" "+ min + ":" + sec;
+    document.getElementById("timer").innerHTML ="Оставшееся время" + " "+ min + ":" + sec;
     // если время вышло
     if (remain < 0) {
       // останавливаем отсчёт
@@ -101,31 +101,76 @@ if(costifnull === null){
 if(localStorage.getItem('discount')){
   discount = localStorage.getItem('discount');
   CostWithoutDiscount = localStorage.getItem('cost');
+
   FinalCost = CostWithoutDiscount-(CostWithoutDiscount*discount);
-  document.getElementById("cost_course").innerHTML = "Сумма оплаты составляет: " + FinalCost + " ₽" + "<br>" + "Применена скидка: " + CostWithoutDiscount*discount +" ₽";
+  document.getElementById("cost_course").innerHTML = "Оплатить: " + FinalCost + " ₽" + "<br>" + "Скидка: " + CostWithoutDiscount*discount +" ₽";
+  document.getElementById("price").innerHTML = "руб: " + FinalCost + " ₽";
+
+
+  
 }else{
 costifnull = localStorage.getItem('cost');
-document.getElementById("cost_course").innerHTML = "Сумма оплаты составляет: " + localStorage.getItem('cost') + " ₽";
+document.getElementById("cost_course").innerHTML = "Оплатить: " + localStorage.getItem('cost') + " ₽";
+document.getElementById("price").innerHTML = "руб " + localStorage.getItem('cost') + " ₽";
+url = new URL(window.location.href);
+result = url.searchParams.get('transaction');
+document.getElementById("numTransition").innerHTML = "Номер транзакиции: " + result;
+title = localStorage.getItem('course_id');
+title = parseInt(title,10);
+var finaltital = document.getElementById("finaltitle");
+switch (title){
+  case 1:
+    finaltital.innerHTML = "Курс - Разговорный курс";
+    break;
+  case 2:
+    finaltital.innerHTML = "Курс - Научитья с нуля";
+    break;
+  case 3:
+    finaltital.innerHTML = "Курс - Уровень носителя";
+    break;
+  case 4:
+    finaltital.innerHTML = "Курс - Подготовка экзамена";
+    break;
+    default:
+      finaltital.innerHTML = "Курс - Неизвестный курс"; // Обработка случая, если title не соответствует ни одному из кейсов
+      break;
+}
 }
 function course1(){
+  result = '';
+  for (let i = 0; i < 14; i++) {
+    result += Math.floor(Math.random() * 10); // Генерация случайной цифры от 0 до 9
+  }
   localStorage.setItem('cost',2500);
   localStorage.setItem('course_id',1);
-  window.location.href = "payment.php?";
+  window.location.href = `payment.php?transaction=${result}`;
 }
 function course2(){
+  result = '';
+  for (let i = 0; i < 14; i++) {
+    result += Math.floor(Math.random() * 10); // Генерация случайной цифры от 0 до 9
+  }
   localStorage.setItem('cost',2500);
   localStorage.setItem('course_id',2);
-  window.location.href = "payment.php?";
+  window.location.href = `payment.php?transaction=${result}`;
 }
 function course3(){
+  result = '';
+  for (let i = 0; i < 14; i++) {
+    result += Math.floor(Math.random() * 10); // Генерация случайной цифры от 0 до 9
+  }
   localStorage.setItem('cost',2500);
   localStorage.setItem('course_id',3);
-  window.location.href = "payment.php?" ;
+  window.location.href = `payment.php?transaction=${result}`;
 }
 function course4(){
+  result = '';
+  for (let i = 0; i < 14; i++) {
+    result += Math.floor(Math.random() * 10); // Генерация случайной цифры от 0 до 9
+  }
   localStorage.setItem('cost',3000);
   localStorage.setItem('course_id',4);
-  window.location.href = "payment.php?";
+  window.location.href = `payment.php?transaction=${result}`;
 }
 function closeSess(){
   Swal.fire({

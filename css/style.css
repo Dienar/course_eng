@@ -428,7 +428,6 @@ button:hover{
     font-size: 1.5em;
     font-weight: 600;
     margin-left: 1em;
-    margin-top: 0.5em;
     margin-bottom: 0.5em;
   text-shadow: 0px 5px 25px #009ee4;
     color: #009ee4;
@@ -459,7 +458,6 @@ button:hover{
     font-size: 1.5em;
     font-weight: 600;
     margin-left: 1em;
-    margin-top: 0.5em;
     margin-bottom: 0.5em;
     text-shadow: 0px 5px 25px #009ee4;
     color: #009ee4;
@@ -626,8 +624,8 @@ display: inline;
 }
 
 .right_block_bonus input:focus {
-    border: 2px solid #FF6F61; /* Красивый акцентный цвет */
-    box-shadow: 0px 0px 10px rgba(255, 111, 97, 0.7);
+    border: 2px solid #0b76ef; /* Красивый акцентный цвет */
+    box-shadow: 0px 0px 10px #0b76ef(255, 111, 97, 0.7);
     background: #ffffff;
     transform: scale(1.02);
     transition: all 0.3s ease;

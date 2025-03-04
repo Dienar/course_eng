@@ -53,9 +53,6 @@ $result4 = $mysqli->query($sql4);
         <th>ID</th>
         <th>Имя</th>
         <th>Email</th>
-        <th>Город</th>
-        <th>Индекс</th>
-        <th>Имя на карте</th>
         <th>Номер карты</th>
         <th>ID курса</th>
         <th>Действия</th>
@@ -65,9 +62,6 @@ $result4 = $mysqli->query($sql4);
         <td><?= $row['id'] ?></td>
         <td><?= htmlspecialchars($row['name']) ?></td>
         <td><?= htmlspecialchars($row['email']) ?></td>
-        <td><?= htmlspecialchars($row['sity']) ?></td>
-        <td><?= htmlspecialchars($row['index_user']) ?></td>
-        <td><?= htmlspecialchars($row['nameoncart']) ?></td>
         <td><?= htmlspecialchars($row['cartnum']) ?></td>
         <td><?= htmlspecialchars($row['course_id']) ?></td>
         <td class="actions">
