@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const saveButton = document.getElementById("saveProgress");
     const exitButton = document.getElementById("exit");
 
+    // Получаем идентификатор курса из URL
+    const url = new URL(window.location.href);
+    const selectCourse = url.searchParams.get("selectcourse");
+    const courseId = parseInt(selectCourse, 10);
+
+    // Сохраняем идентификатор курса в localStorage
+    localStorage.setItem("selectcourse", courseId);
+
     function updateProgressBar(progress) {
         progressBar.style.width = progress + "%";
         console.log("Updated progress bar:", progress + "%");
@@ -12,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch("../php/progress.php", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `progress=${progress}&answers=${encodeURIComponent(JSON.stringify(answers))}`
+            body: `course_id=${courseId}&progress=${progress}&answers=${encodeURIComponent(JSON.stringify(answers))}`
         }).then(response => response.json())
           .then(data => {
               console.log("Progress saved:", data.progress);
@@ -22,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function loadProgress() {
-        fetch("../php/progress.php")
+        fetch(`../php/progress.php?course_id=${courseId}`)
             .then(response => response.json())
             .then(data => {
                 console.log("Loaded progress:", data);
@@ -61,8 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     
-    
-
     function collectAnswers() {
         let answers = {};
 
