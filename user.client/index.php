@@ -75,6 +75,7 @@ $progress = $row ? $row['progress'] : 0;
         $sql->execute();
         $all_courses = $sql->get_result();
         while($row = $all_courses->fetch_assoc()){
+            $_SESSION['course_id'] = $row['course_id'];
             switch ($row['course_id']){
                 case 1:
                     echo "
@@ -82,6 +83,9 @@ $progress = $row ? $row['progress'] : 0;
             <h2>Разговорный тест</h2>
             <img src='https://avatars.mds.yandex.net/i?id=33338c34eb85f1d4b743bebab17c9f50b7e93d98-9182046-images-thumbs&n=13' alt=''>
             <p id='question'>Нажмите 'Начать тест', чтобы начать.</p>
+            <div class='progress-bar'>
+            <div class='progress' id='userProgress' style='width: <?php echo $progress; ?>%;'></div>
+            </div>
             <a class='btn primary' href='#'>Начать тест</a>
             </section>";
                     break;
@@ -91,6 +95,9 @@ $progress = $row ? $row['progress'] : 0;
             <h2>Уровень носителя</h2>
             <img src='https://sun9-32.userapi.com/impg/QFiJ8UEzUjCZPiS7L-jNW6d0Uf3ups1VV0cCow/O7NUfX6rY8s.jpg?size=480x320&quality=95&sign=dcedafdf2937bf90d49f2c2b2b1658e0&type=album' alt=''>
             <p id='question'>Нажмите 'Начать тест', чтобы начать.</p>
+            <div class='progress-bar'>
+            <div class='progress' id='userProgress' style='width: <?php echo $progress; ?>%;'></div>
+            </div>
             <a class='btn primary'  href='#'>Начать тест</a>
             </section>";
                     break; 
@@ -99,29 +106,33 @@ $progress = $row ? $row['progress'] : 0;
             <section class='conversation-test'>
         <h2>Разговорный тест</h2>
         <img src='https://avatars.mds.yandex.net/i?id=845e4d24432e04ef83d0a78b0ea2ddd1f53bd43a-12935885-images-thumbs&n=13' alt=''>
-        
         <p id='question'>Нажмите 'Начать тест', чтобы начать.</p>
         <div class='progress-bar'>
-    <div class='progress' id='userProgress' style='width: <?php echo $progress; ?>%;'></div>
-</div>
-
+        <div class='progress' id='userProgress' style='width: <?php echo $progress; ?>%;'></div>
+        </div>
         <a class='btn primary' href='../english_test_app/index.php'>Начать тест</a>
         </section>";
                     break; 
                 case 4:
-                     echo "
-            <section class='conversation-test'>
+                     echo 
+    "<section class='conversation-test'>
     <h2>Разговорный тест</h2>
     <img src='https://avatars.mds.yandex.net/i?id=845e4d24432e04ef83d0a78b0ea2ddd1f53bd43a-12935885-images-thumbs&n=13' alt=''>
     <p id='question'>Нажмите 'Начать тест', чтобы начать.</p>
     <div class='progress-bar'>
-        <div class='progress' id='testProgress'></div>
+    <div class='progress' id='testProgress'></div>
     </div>
     <a class='btn primary' href='../english_test_app/index.php'>Начать тест</a>
-</section>";
+    </section>";
                     break;
                     default:
-                    echo "Вы еще не приобрели ни одного урока";
+                    echo 
+            "<section class='conversation-test empty_course'>
+            <h2>Добро пожаловать в ваш личный кабинет !</h2>
+            <p id='question'>Здесь вы можете увидеть все ваши купленные курсы.</p>
+            <p id='question'>Для того чтобы совершить покупку, просто зайдите на главную страницу.</p>
+            <a class='btn primary' href='../index_loged.php'>Перейти в магазин</a>
+            </section>";
                     break;
             }
             
