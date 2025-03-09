@@ -48,10 +48,10 @@
     <div class="block_text"><p>Global</p></div>
 </div>
 <div class="list_container">
-    <a href="">Тестовый курс</a>
-    <a href="">Курсы</a>
-    <a href="">Помощь</a>
-    <a href="">О нас</a>
+<a href="#testcourse">Тестовый курс</a>
+    <a href="#usercourse">Курсы</a>
+    <a href="#helpinput"id="show-chat">Помощь</a>
+    <a href="#login">О нас</a>
 </div>
 <div class="register_container" ><a href="#" onclick="Reg_or_not()"><i class="fa-solid fa-user-tie"></i> Profile</a> 
 <a href="" id="exit" onclick="Reg_or_not2()"><i class="fa-solid fa-right-from-bracket"></i></a>
@@ -61,7 +61,7 @@
     </div>
 <div class="text_container_start">
     <div class="text_container_start_bold">
-        <p>Английский - это <a class="text_container_start_bold__orange">просто</a><br>
+        <p>Английский - это <a class="text_container_start_bold__orange" id="helpinput">просто</a><br>
         Запишитесь на наш курс</p>
     </div>
     <div class="text_container_start_under_bold">
@@ -132,7 +132,7 @@
         </div>
         </div>
         <div class="block_eng">
-            <p class="block_eng_right eco">Экономный 💵</p>
+            <p class="block_eng_right eco" id="usercourse">Экономный 💵</p>
             <p class="block_eng_right"><?php 
             require "php/celect_course.php";
 
@@ -268,7 +268,7 @@
                 
             } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
-            <div class="block_eng_button">
+            <div class="block_eng_button" id="testcourse">
             <a onclick="course4()">Купить сейчас</a>
         </div>
         </div>
@@ -368,6 +368,43 @@
     <a href="">Политика конфидециальности</a>
     <p>© Global, 2024</p>
     </div></div>
+    <div id="support-chat">
+	<div id="chat-header">
+		<span>Support</span>
+		<button id="close-chat">&times;</button>
+	</div>
+	<div id="chat-body">
+		<div id="email-form">
+			<input type="email" id="user-email" placeholder="Enter your email..." required />
+			<button id="submit-email">Start Chat</button>
+		</div>
+		<div id="chat-messages" style="display: none;"></div>
+		<div id="chat-input-container" style="display: none;">
+			<input type="text" id="chat-input" placeholder="Type a message..." />
+			<button id="send-message"><i class="fas fa-paper-plane"></i></button>
+		</div>
+	</div>
+</div>
+<div id="chat-icon">
+	<i class="fas fa-comment-dots" style="margin: 0 auto;"></i>
+</div>
+<script>
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('beforeunload', () => {
+    localStorage.setItem('scrollPosition', window.scrollY);
+});
+
+window.addEventListener('load', () => {
+    const scrollPosition = localStorage.getItem('scrollPosition');
+    if (scrollPosition) {
+        window.scrollTo(0, parseInt(scrollPosition, 10));
+    }
+});
+
+</script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="js/payment.js"></script>

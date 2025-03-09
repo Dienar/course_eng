@@ -24,7 +24,7 @@ if ($stmt->num_rows > 0) {
     $_SESSION['user_role'] = 'admin';
     header('Location: ../index_admin.php');
     exit();
-}
+}else{
 $stmt = $mysqli->prepare("SELECT id FROM users WHERE email = ?");
 $stmt->bind_param("s",$emailform);
 $stmt->execute();
@@ -77,7 +77,7 @@ if ($set->num_rows > 0) {
     </script>";
     } else {
         echo "Ошибка при регистрации.";
-    }
+    }}
 }
 
 $mysqli->close();
