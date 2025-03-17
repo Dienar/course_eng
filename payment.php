@@ -10,7 +10,7 @@
 
 <body>
 	<div class="container">
-		<a onclick="closeSess()">< назад</a>
+		<a class="closeSess" onclick="closeSess()">< назад</a>
 		<div class="left-panel">
 			<div class="title">EngPay RU</div>
 			<p>Описание продукта</p>

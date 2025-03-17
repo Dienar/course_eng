@@ -6,7 +6,9 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   background-color: #f4f4f4;
 }
@@ -20,6 +22,8 @@ body {
 }
 .container a{
   cursor: pointer;
+  z-index: 100;
+  height: 10px;
 }
 .switch {
   position: relative;
@@ -208,7 +212,9 @@ input:checked+.slider:before {
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 			width: 870px;
 		}
-
+    .closeSess{
+      cursor: pointer;
+    }
 		.left-panel,
 		.right-panel {
 			flex: 1;
@@ -326,7 +332,6 @@ input:checked+.slider:before {
 	.separator {
 	width: 1.5px;
 	background-color: lightgray;
-	position: absolute;
 	top:20%;
 	bottom: 20%;
 	left: 50%;
