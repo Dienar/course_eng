@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 'off');
+error_reporting(0);
 require_once "conn.php";
 session_start();
 

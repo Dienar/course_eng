@@ -174,7 +174,6 @@
     <div class="progress" id="testProgress"></div>
 </div>
 <div class="buttons-container">
-    <button id="checkButton">Check Answers</button>
     <button id="saveProgress">Save Progress</button>
     <button id="exit">Exit</button>
 </div>
