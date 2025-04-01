@@ -190,7 +190,7 @@ button:hover{
 .list_container{
     display: flex;
     width: 100%;
-    margin-left: 8em;
+    margin-left: 13em;
     margin-top: 1.2em;
     transition: 0, 2s;
     text-align: center;
