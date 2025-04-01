@@ -35,7 +35,6 @@ h1 {
     width: 80%;
     text-align: left;
 }
-
 h3 {
     color: #555;
 }
@@ -91,4 +90,35 @@ button:hover {
     margin: 10px auto;
     background: #f9f9f9;
     border-radius: 5px;
+}
+/* Стили для кнопки "Показать ответ" */
+.show-answer-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.show-answer-btn:hover {
+    background-color: #45a049;
+}
+
+/* Стили для блока с ответом */
+.answer {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+.answer p {
+    margin: 0;
+    color: #333;
+    font-weight: bold;
 }

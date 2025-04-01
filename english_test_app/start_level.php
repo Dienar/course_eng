@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Advanced English Test</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -24,6 +25,11 @@
                 <label><input type="radio" name="q1" value="A"> put on</label>
                 <label><input type="radio" name="q1" value="B"> put off</label>
                 <label><input type="radio" name="q1" value="C"> put away</label>
+
+                <button class="show-answer-btn" data-question="1">Показать ответ</button>
+                <div class="answer" id="answer1" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. put on</p>
+                </div>
             </div>
 
             <!-- Вопрос 2 -->
@@ -33,6 +39,11 @@
                 <label><input type="radio" name="q2" value="A"> on the ball</label>
                 <label><input type="radio" name="q2" value="B"> on pins and needles</label>
                 <label><input type="radio" name="q2" value="C"> on the fence</label>
+
+                <button class="show-answer-btn" data-question="2">Показать ответ</button>
+                <div class="answer" id="answer2" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> B. on pins and needles</p>
+                </div>
             </div>
 
             <!-- Вопрос 3 -->
@@ -42,6 +53,11 @@
                 <label><input type="radio" name="q3" value="A"> can</label>
                 <label><input type="radio" name="q3" value="B"> must</label>
                 <label><input type="radio" name="q3" value="C"> might</label>
+
+                <button class="show-answer-btn" data-question="3">Показать ответ</button>
+                <div class="answer" id="answer3" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> B. must</p>
+                </div>
             </div>
 
             <!-- Вопрос 4 -->
@@ -51,6 +67,11 @@
                 <label><input type="radio" name="q4" value="A"> was</label>
                 <label><input type="radio" name="q4" value="B"> were</label>
                 <label><input type="radio" name="q4" value="C"> am</label>
+
+                <button class="show-answer-btn" data-question="4">Показать ответ</button>
+                <div class="answer" id="answer4" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> B. were</p>
+                </div>
             </div>
 
             <!-- Вопрос 5 -->
@@ -60,6 +81,11 @@
                 <label><input type="radio" name="q5" value="A"> She said she is tired.</label>
                 <label><input type="radio" name="q5" value="B"> She said she was tired.</label>
                 <label><input type="radio" name="q5" value="C"> She said she has been tired.</label>
+
+                <button class="show-answer-btn" data-question="5">Показать ответ</button>
+                <div class="answer" id="answer5" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> B. She said she was tired.</p>
+                </div>
             </div>
 
             <!-- Вопрос 6 -->
@@ -69,6 +95,11 @@
                 <label><input type="radio" name="q6" value="A"> was written</label>
                 <label><input type="radio" name="q6" value="B"> wrote</label>
                 <label><input type="radio" name="q6" value="C"> is written</label>
+
+                <button class="show-answer-btn" data-question="6">Показать ответ</button>
+                <div class="answer" id="answer6" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. was written</p>
+                </div>
             </div>
 
             <!-- Вопрос 7 -->
@@ -78,6 +109,11 @@
                 <label><input type="radio" name="q7" value="A"> a</label>
                 <label><input type="radio" name="q7" value="B"> an</label>
                 <label><input type="radio" name="q7" value="C"> the</label>
+
+                <button class="show-answer-btn" data-question="7">Показать ответ</button>
+                <div class="answer" id="answer7" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> B. an</p>
+                </div>
             </div>
 
             <!-- Вопрос 8 -->
@@ -87,6 +123,11 @@
                 <label><input type="radio" name="q8" value="A"> interesting</label>
                 <label><input type="radio" name="q8" value="B"> more interesting</label>
                 <label><input type="radio" name="q8" value="C"> most interesting</label>
+
+                <button class="show-answer-btn" data-question="8">Показать ответ</button>
+                <div class="answer" id="answer8" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> B. more interesting</p>
+                </div>
             </div>
 
             <!-- Вопрос 9 -->
@@ -96,6 +137,11 @@
                 <label><input type="radio" name="q9" value="A"> the best</label>
                 <label><input type="radio" name="q9" value="B"> better</label>
                 <label><input type="radio" name="q9" value="C"> good</label>
+
+                <button class="show-answer-btn" data-question="9">Показать ответ</button>
+                <div class="answer" id="answer9" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. the best</p>
+                </div>
             </div>
 
             <!-- Вопрос 10 -->
@@ -105,6 +151,11 @@
                 <label><input type="radio" name="q10" value="A"> in</label>
                 <label><input type="radio" name="q10" value="B"> on</label>
                 <label><input type="radio" name="q10" value="C"> at</label>
+
+                <button class="show-answer-btn" data-question="10">Показать ответ</button>
+                <div class="answer" id="answer10" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. in</p>
+                </div>
             </div>
 
             <!-- Вопрос 11 -->
@@ -114,6 +165,11 @@
                 <label><input type="radio" name="q11" value="A"> Did you go</label>
                 <label><input type="radio" name="q11" value="B"> You went</label>
                 <label><input type="radio" name="q11" value="C"> Went you</label>
+
+                <button class="show-answer-btn" data-question="11">Показать ответ</button>
+                <div class="answer" id="answer11" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. Did you go</p>
+                </div>
             </div>
 
             <!-- Вопрос 12 -->
@@ -122,6 +178,11 @@
                 <label><input type="radio" name="q12" value="A"> Sad</label>
                 <label><input type="radio" name="q12" value="B"> Joyful</label>
                 <label><input type="radio" name="q12" value="C"> Angry</label>
+
+                <button class="show-answer-btn" data-question="12">Показать ответ</button>
+                <div class="answer" id="answer12" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> B. Joyful</p>
+                </div>
             </div>
 
             <!-- Вопрос 13 -->
@@ -130,6 +191,11 @@
                 <label><input type="radio" name="q13" value="A"> Cold</label>
                 <label><input type="radio" name="q13" value="B"> Warm</label>
                 <label><input type="radio" name="q13" value="C"> Boiling</label>
+
+                <button class="show-answer-btn" data-question="13">Показать ответ</button>
+                <div class="answer" id="answer13" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. Cold</p>
+                </div>
             </div>
 
             <!-- Вопрос 14 -->
@@ -139,6 +205,11 @@
                 <label><input type="radio" name="q14" value="A"> made</label>
                 <label><input type="radio" name="q14" value="B"> did</label>
                 <label><input type="radio" name="q14" value="C"> took</label>
+
+                <button class="show-answer-btn" data-question="14">Показать ответ</button>
+                <div class="answer" id="answer14" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. made</p>
+                </div>
             </div>
 
             <!-- Вопрос 15 -->
@@ -148,6 +219,11 @@
                 <label><input type="radio" name="q15" value="A"> changed</label>
                 <label><input type="radio" name="q15" value="B"> made up</label>
                 <label><input type="radio" name="q15" value="C"> turned</label>
+
+                <button class="show-answer-btn" data-question="15">Показать ответ</button>
+                <div class="answer" id="answer15" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. changed</p>
+                </div>
             </div>
 
             <!-- Вопрос 16 -->
@@ -157,6 +233,11 @@
                 <label><input type="radio" name="q16" value="A"> had already started</label>
                 <label><input type="radio" name="q16" value="B"> already started</label>
                 <label><input type="radio" name="q16" value="C"> has already started</label>
+
+                <button class="show-answer-btn" data-question="16">Показать ответ</button>
+                <div class="answer" id="answer16" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. had already started</p>
+                </div>
             </div>
 
             <!-- Вопрос 17 -->
@@ -166,6 +247,11 @@
                 <label><input type="radio" name="q17" value="A"> lost</label>
                 <label><input type="radio" name="q17" value="B"> kept</label>
                 <label><input type="radio" name="q17" value="C"> held</label>
+
+                <button class="show-answer-btn" data-question="17">Показать ответ</button>
+                <div class="answer" id="answer17" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. lost</p>
+                </div>
             </div>
 
             <!-- Вопрос 18 -->
@@ -175,6 +261,11 @@
                 <label><input type="radio" name="q18" value="A"> kept</label>
                 <label><input type="radio" name="q18" value="B"> broke</label>
                 <label><input type="radio" name="q18" value="C"> made</label>
+
+                <button class="show-answer-btn" data-question="18">Показать ответ</button>
+                <div class="answer" id="answer18" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. kept</p>
+                </div>
             </div>
 
             <!-- Вопрос 19 -->
@@ -184,6 +275,11 @@
                 <label><input type="radio" name="q19" value="A"> changed</label>
                 <label><input type="radio" name="q19" value="B"> made up</label>
                 <label><input type="radio" name="q19" value="C"> turned</label>
+
+                <button class="show-answer-btn" data-question="19">Показать ответ</button>
+                <div class="answer" id="answer19" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. changed</p>
+                </div>
             </div>
 
             <!-- Вопрос 20 -->
@@ -193,6 +289,11 @@
                 <label><input type="radio" name="q20" value="A"> lost</label>
                 <label><input type="radio" name="q20" value="B"> kept</label>
                 <label><input type="radio" name="q20" value="C"> held</label>
+
+                <button class="show-answer-btn" data-question="20">Показать ответ</button>
+                <div class="answer" id="answer20" style="display: none;">
+                    <p><strong>Правильный ответ:</strong> A. lost</p>
+                </div>
             </div>
 
         </div>
@@ -207,6 +308,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="script.js"></script>
-    </body>
+</body>
 
 </html>

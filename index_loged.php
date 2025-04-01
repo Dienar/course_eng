@@ -11,17 +11,6 @@
 <link rel="manifest" href="/site.webmanifest">
     <script src="jquery-3.7.1.min.js"></script>
     <script>
-                $(document).ready(function() {
-    $("#ajax_form").on('submit', function(event) {
-        event.preventDefault();
-        $.post("php/form.php", $(this).serialize(), function(response) {
-            console.log(response); // Отладка ответа от сервера
-            alert("Ваше сообщение отправлено");
-        });
-        event.target.reset();
-    });
-});
-        
         $(document).ready(function(){
         $("#registr").on('submit',function(event){
             event.preventDefault();
@@ -47,16 +36,28 @@
     </div>
     <div class="block_text"><p>Global</p></div>
 </div>
+<div class="menu-icon" id="menu-icon">
+    <i class="fas fa-bars"></i>
+</div>
+<div class="list_container" id="nav-menu">
+    <a href="#testcourse">Тестовый курс</a>
+    <a href="#usercourse">Курсы</a>
+    <a hhref="#" onclick="Reg_or_not()"> Profile</a> 
+        <a href="" id="exit" onclick="Reg_or_not2()">Exit</a>
+       
+</div>
 <div class="list_container">
-<a href="#testcourse">Тестовый курс</a>
+    <a href="#testcourse">Тестовый курс</a>
     <a href="#usercourse">Курсы</a>
     <a href="#helpinput"id="show-chat">Помощь</a>
     <a href="#login">О нас</a>
 </div>
-<div class="register_container" ><a href="#" onclick="Reg_or_not()"><i class="fa-solid fa-user-tie"></i> Profile</a> 
+<div class="register_container media" ><a href="#" onclick="Reg_or_not()"><i class="fa-solid fa-user-tie"></i> Profile</a> 
 <a href="" id="exit" onclick="Reg_or_not2()"><i class="fa-solid fa-right-from-bracket"></i></a>
 </div>
-</div><div class="img__container__start">
+</div>
+
+<div class="img__container__start">
         <img src="img/women__ready.png" alt="">
     </div>
 <div class="text_container_start">
@@ -79,7 +80,7 @@
 </form>
 </div>
 </div>
-</div>
+
 <div class="users_container">
     <div class="users_container__img">
         <img src="img/user.png" alt="">
@@ -128,7 +129,7 @@
             } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
-            <a onclick="course1()">Купить сейчас</a>
+            <a href="about_course/сonversationalcourse.php">Узнать подробнее</a>
         </div>
         </div>
         <div class="block_eng">
@@ -175,7 +176,7 @@
             } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
-            <a onclick="course2()">Купить сейчас</a>
+            <a href="about_course/learnfromscratch.php">Узнать подробнее</a>
             
         </div>
         
@@ -223,7 +224,7 @@
             } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button">
-            <a onclick="course3()">Купить сейчас</a>
+            <a onclick="course3()">Узнать подробнее</a>
         </div>
         </div>
         <div class="block_eng">
@@ -269,7 +270,7 @@
             } ?></p>
             <p class="block_eng_time">&#8987; 20 уроков</p>
             <div class="block_eng_button" id="testcourse">
-            <a onclick="course4()">Купить сейчас</a>
+            <a href="about_course/сonversationalcourse.php">Узнать подробнее</a>
         </div>
         </div>
     </div>
@@ -339,12 +340,12 @@
 <div class="right_block_bonus">
     <form action="php/reg.php" method="POST">
         <div class="right_block_bonus_text first_block">
-        <input type="text" name="name" required placeholder="Имя">
+        <input class="right_block_bonus_text-input" type="text" name="name" required placeholder="Имя">
     </div>
     <div class="right_block_bonus_text">
-        <input type="email" name="email" required placeholder="Почта"></div>
+        <input class="right_block_bonus_text-input" type="email" name="email" required placeholder="Почта"></div>
         <div class="right_block_bonus_text">
-        <input type="tel" data-tel-input required name="phone" placeholder="+7 (999) 999-99-99" id="phone-mask"></div>
+        <input class="right_block_bonus_text-input" type="tel" data-tel-input required name="phone" placeholder="+7 (999) 999-99-99" id="phone-mask"></div>
         <div class="right_block_bonus_text checkbox_label">
         <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes" required><label for="happy">Даю согласие на обработу персональных данных</label></div>
         <div class="right_block_bonus_text_submit_button">
@@ -353,7 +354,7 @@
 </div>
 </div>
 <div class="container_circle_text bottom_block">
-    <div class="circle_container">
+    <div class="circle_container media">
         <div class="circle_main">
             <div class="circle_text_container">
                 <div class = "circle_text">
@@ -363,9 +364,9 @@
         </div>
     </div>
     <div class="list_container_a" id="login"><p>Global</p>
-    <a href="">Правила акции</a>
-    <a href="">Оферта</a>
-    <a href="">Политика конфидециальности</a>
+    <a>Правила акции</a>
+    <a href="rules/offer.html" class="list_container_a-media">Оферта</a>
+    <a href="privacy" class="list_container_a-media">Политика конфидециальности</a>
     <p>© Global, 2024</p>
     </div></div>
     <div id="support-chat">
@@ -389,22 +390,22 @@
 	<i class="fas fa-comment-dots" style="margin: 0 auto;"></i>
 </div>
 <script>
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
-
-window.addEventListener('beforeunload', () => {
-    localStorage.setItem('scrollPosition', window.scrollY);
-});
-
-window.addEventListener('load', () => {
-    const scrollPosition = localStorage.getItem('scrollPosition');
-    if (scrollPosition) {
-        window.scrollTo(0, parseInt(scrollPosition, 10));
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
     }
-});
-
-</script>
+    
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('scrollPosition', window.scrollY);
+    });
+    
+    window.addEventListener('load', () => {
+        const scrollPosition = localStorage.getItem('scrollPosition');
+        if (scrollPosition) {
+            window.scrollTo(0, parseInt(scrollPosition, 10));
+        }
+    });
+    
+    </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="js/payment.js"></script>

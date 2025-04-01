@@ -143,7 +143,7 @@ function course1(){
   }
   localStorage.setItem('cost',2500);
   localStorage.setItem('course_id',1);
-  window.location.href = `payment.php?transaction=${result}`;
+  window.location.href = `../payment.php?transaction=${result}`;
 }
 function course2(){
   result = '';
@@ -152,7 +152,7 @@ function course2(){
   }
   localStorage.setItem('cost',2500);
   localStorage.setItem('course_id',2);
-  window.location.href = `payment.php?transaction=${result}`;
+  window.location.href = `../payment.php?transaction=${result}`;
 }
 function course3(){
   result = '';
@@ -161,7 +161,7 @@ function course3(){
   }
   localStorage.setItem('cost',2500);
   localStorage.setItem('course_id',3);
-  window.location.href = `payment.php?transaction=${result}`;
+  window.location.href = `../payment.php?transaction=${result}`;
 }
 function course4(){
   result = '';
@@ -170,7 +170,7 @@ function course4(){
   }
   localStorage.setItem('cost',3000);
   localStorage.setItem('course_id',4);
-  window.location.href = `payment.php?transaction=${result}`;
+  window.location.href = `../payment.php?transaction=${result}`;
 }
 function closeSess(){
   Swal.fire({

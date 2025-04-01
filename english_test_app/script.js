@@ -1,4 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const showAnswerButtons = document.querySelectorAll('.show-answer-btn');
+
+    // Добавляем обработчик события для каждой кнопки
+    showAnswerButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Получаем номер вопроса из атрибута data-question
+            const questionId = button.getAttribute('data-question');
+            // Находим блок с ответом по ID
+            const answerBlock = document.getElementById(`answer${questionId}`);
+
+            // Переключаем видимость блока с ответом
+            if (answerBlock.style.display === 'none' || answerBlock.style.display === '') {
+                answerBlock.style.display = 'block';
+                button.textContent = 'Скрыть ответ';
+            } else {
+                answerBlock.style.display = 'none';
+                button.textContent = 'Показать ответ';
+            }
+        });
+    });
     const progressBar = document.getElementById("testProgress");
     const saveButton = document.getElementById("saveProgress");
     const exitButton = document.getElementById("exit");

@@ -63,8 +63,11 @@ if ($set->num_rows > 0) {
     $result = $query->execute();
 
     if ($result) {
+        $new_user_id = $query->insert_id;
+        
         $_SESSION['email'] = $email;
         $_SESSION['user_role'] = 'user';
+        $_SESSION['user_id'] = $new_user_id; 
         echo "<script>
         localStorage.setItem('Reg_or_Not',2);
         document.addEventListener('DOMContentLoaded', function() {

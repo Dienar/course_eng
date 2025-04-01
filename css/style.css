@@ -5,10 +5,13 @@
 }
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    margin-left: 0;
 }
 body{
     background-color: rgba(225, 246, 233, 0.8);
     overflow-x: hidden;
+    margin-left: 0;
 }
 div:where(.swal2-container).swal2-center>.swal2-popup {
     grid-column: 2;
@@ -22,45 +25,6 @@ a{
 div:where(.swal2-container).swal2-top, div:where(.swal2-container).swal2-center, div:where(.swal2-container).swal2-bottom {
     margin: 0 auto;
 }
-/* Иконка для открытия чата */
-#chat-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #007bff;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    font-size: 24px;
-    transition: background 0.3s;
-}
-
-#chat-icon:hover {
-    background: #0056b3;
-}
-
-/* Окно чата */
-#support-chat {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 320px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    display: none;
-    flex-direction: column;
-}
-
-/* Заголовок */
 #chat-header {
     background: #007bff;
     color: white;
@@ -90,15 +54,12 @@ div:where(.swal2-container).swal2-top, div:where(.swal2-container).swal2-center,
     height: 300px;
     margin: 0;
 }
-
 #chat-messages {
     flex-grow: 1;
     padding: 10px;
     overflow-y: auto;
     max-height: 250px;
 }
-
-/* Ввод сообщения */
 #chat-input-container {
     display: flex;
     border-top: 1px solid #ccc;
@@ -106,7 +67,6 @@ div:where(.swal2-container).swal2-top, div:where(.swal2-container).swal2-center,
     background: #f9f9f9;
     margin: 0;
 }
-
 #chat-input {
     flex-grow: 1;
     padding: 8px;
@@ -114,7 +74,6 @@ div:where(.swal2-container).swal2-top, div:where(.swal2-container).swal2-center,
     border-radius: 5px;
     outline: none;
 }
-
 #send-message {
     background: #007bff;
     border: none;
@@ -124,7 +83,6 @@ div:where(.swal2-container).swal2-top, div:where(.swal2-container).swal2-center,
     border-radius: 5px;
     cursor: pointer;
 }
-
 #send-message i {
     font-size: 16px;
 }
@@ -132,7 +90,6 @@ div:where(.swal2-container).swal2-top, div:where(.swal2-container).swal2-center,
     padding: 15px;
     text-align: center;
 }
-
 #email-form input {
     width: 80%;
     padding: 8px;
@@ -140,7 +97,6 @@ div:where(.swal2-container).swal2-top, div:where(.swal2-container).swal2-center,
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
 #submit-email {
     background: #007bff;
     color: white;
@@ -155,8 +111,6 @@ div:where(.swal2-container).swal2-top, div:where(.swal2-container).swal2-center,
     padding: 5px;
     margin-top: 5px;
 }
-
-
 #exit{
     display: block;
     width: 4em;
@@ -169,9 +123,16 @@ button{
 button:hover{
     box-shadow: 1px 2px 8px 5px rgba(34, 60, 80, 0.2);
 }
-.global_list_button_container{
+.global_list_button_container {
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+    background-color: white;
     display: flex;
-    margin-top: 1em;
+    justify-content: space-between;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    margin: 0;
 }
 .container_circle_text{
     display: flex;
@@ -186,7 +147,7 @@ button:hover{
 }
 .circle_main
 {
-	width : 100%;
+	width:100%;
 	height : 100%;
 	border-radius : 50%;
 	border : 6px solid lightsalmon;
@@ -212,7 +173,6 @@ button:hover{
 	font: 33px "Tahoma", Arial, Serif;	
 	text-align : center;
 	color: #48b774;
-	/* vertical centering technique */
 	position : relative;
 	top : 50%;
 	transform : translateY(-50%);
@@ -229,11 +189,13 @@ button:hover{
 }
 .list_container{
     display: flex;
-    justify-content: space-between;
-    width: 23em;
-    margin-left: 15em;
+    width: 100%;
+    margin-left: 8em;
     margin-top: 1.2em;
-    transition: 0,2s;
+    transition: 0, 2s;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 .list_container a:after {
     display:block;
@@ -275,7 +237,7 @@ button:hover{
 .register_container{
     display: flex;
     margin-left: 13em;
-    margin-right: 10em;
+    margin-right: 1em;
     margin-top: 1.2em;
     font-size: 1.2em;
     vertical-align: middle;    
@@ -301,6 +263,7 @@ button:hover{
 }
 .text_container_start{
     margin-top: 8em;
+    margin-left: 9em;
     width: 40em;
 }
 .text_container_start_bold{
@@ -378,6 +341,7 @@ button:hover{
     margin: 0 auto;
 }
 .users_container{
+    margin-left: 9em;
     margin-top: 1.5em;
 }
 .users_container__img img{
@@ -403,13 +367,16 @@ button:hover{
     
 }
 .block_info_about{
+ margin-left: 0;
  margin-top: 9em;
  font-family: 'Poppins', sans-serif;
 
 }
 .info_blocks{
+ margin-left: 0;
  display: flex;
  flex-wrap: wrap;
+ justify-content: center;
 
 }
 .block_eng{
@@ -417,6 +384,7 @@ button:hover{
   width: 38em;
   height: 26em;
   border-radius: 10px;
+  margin-right: 0;
   background-color: gainsboro;
 }
 .gainsboro{
@@ -503,13 +471,12 @@ button:hover{
     background-color: rgb(230, 129, 89);
 }
 .block_test_course{
-    width: 84.5em;
     background-color: #1c9f41;
-    margin-top: 3em;
+    margin-top: 5em;
     flex-wrap: wrap;
-    margin-left: 3em;
-    margin-right: 3em;
-    margin-bottom: 4em;
+
+    margin-right: 2em;
+    margin-bottom: 6em;
     padding-top: 1em;
     padding-bottom: 1em;
     border-radius: 15px;
@@ -522,7 +489,7 @@ button:hover{
     margin-left: 0;
 }
 .text_test_course{
-    width: 17em;
+    width: 25em;
     margin-right: 0;
     padding-top: 10px;
     padding-left: 10px;
@@ -622,10 +589,14 @@ button:hover{
     font-weight: 600;
 }
 .block_info_lessons{
-    display: inline;
+   margin-left: 0;
+   display: flex;
+   justify-content: center;
 }
-.block_left_lessons{
+.block_left_lessons {
     display: inline-block;
+    margin-right: 2em;
+    margin-left: 0;
 }
 .info_img_lessons{
     position: relative;
@@ -634,6 +605,12 @@ button:hover{
 .info_img_lessons img{
     width: 50em;
     height: 25em;
+}
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 1em;
 }
 .info_text_lessons{
     position: absolute;
@@ -656,8 +633,11 @@ button:hover{
     margin-bottom: 0.5em;
     color: white;
 }
-.block_right_lessons{
-    display: inline-block;
+.block_right_lessons {
+    float: right;
+    margin: 0;
+    margin-right: 3%;
+    padding: 0;
 }
 .img_right_lessons{
     position: relative;
@@ -693,10 +673,148 @@ button:hover{
     margin: 0;
     padding: 0;
 }
+.dark-footer {
+    background: #1a202c;
+    color: #e2e8f0;
+    padding: 60px 0 0;
+    font-family: 'Inter', sans-serif;
+    margin-left: 0;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+  }
+  
+  .logo-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #f6ad55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo-letter {
+    color: #48bb78;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 auto;
+  }
+  
+  .logo-slogan {
+    color: #a0aec0;
+    margin-bottom: 25px;
+    font-size: 14px;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .social-links a {
+    color: #a0aec0;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #48bb78;
+  }
+  
+  .links-title {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+  
+  .footer-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 15px;
+  }
+  
+  .footer-links a:hover {
+    color: #48bb78;
+    padding-left: 5px;
+  }
+  
+  .footer-contacts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-contacts li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #a0aec0;
+    font-size: 15px;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #2d3748;
+    margin-top: 60px;
+    padding: 20px 0;
+  }
+  
+  .footer-legal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: #a0aec0;
+    font-size: 14px;
+  }
+  
+  .legal-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .legal-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .legal-links a:hover {
+    color: #f6ad55;
+  }
+  
+  .legal-links span {
+    color: #4a5568;
+  }
+  
 .block_bonus_form{
-    margin-top: 3em;
+    margin-top: 5em;
     margin-bottom: 5em;
-    width: 85em;
+    margin-right: 2%;
     box-sizing: border-box;
     height: 27em;
     background: linear-gradient(#2671c8,black);
@@ -740,24 +858,27 @@ display: inline;
 }
 .right_block_bonus {
     width: 25em;
+    margin-right: 5em;
+    margin-top: 1em;
+    float: right;
     display: inline-block;
     padding: 1em;
     background: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-.right_block_bonus input {
-    font-family: 'StratosSkyeng', Arial, sans-serif;
+.right_block_bonus_text-input{
+     font-family: 'StratosSkyeng', Arial, sans-serif;
     padding: 0.7em;
     font-size: 1.2em;
-    width: calc(100% - 1.5em); /* Учитываем padding, чтобы не выходило за границы */
+    width: 90%; /* Учитываем padding, чтобы не выходило за границы */
     outline: none;
     border: 2px solid #ccc;
     border-radius: 10px;
     transition: all 0.3s ease;
-    box-sizing: border-box; /* Исправляет проблему выхода за границы */
+    box-sizing: border-box;
 }
+
 
 .right_block_bonus input:focus {
     border: 2px solid #0b76ef; /* Красивый акцентный цвет */
@@ -781,6 +902,8 @@ display: inline;
     padding: 0.7em;
     border-radius: 10px;
     transition: all 0.3s ease;
+    height: 3em;
+    margin-left: 0;
    
 }
 
@@ -864,6 +987,9 @@ display: inline;
     color: rgb(116, 116, 116);
     font-size: 0.7em;
 }
+#nav-menu{
+    display: none;
+}
 .list_container_a a:hover{
     color: rgb(162, 160, 160);
 }
@@ -881,8 +1007,401 @@ display: inline;
     height: 100%;
     padding-top: 2em;
     padding-bottom: 3em;
-    margin-left: -4em;
+    margin-left: 0%;
     margin-right: 0em;
 }
+@media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .footer-legal {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  }
+/* Иконка для открытия чата */
+/* Убираем лишние отступы и поля на мобильных устройствах */
+@media (max-width: 768px) {
+    #nav-menu{
+        display: flex;
+    }
+    .register_container.media{
+        display: none;
+    }
+    .list_container_a a{
+        margin: 0;
+    }
+    .list_container_a p{
+        margin: 0;
+    }
+    .circle_container.media{
+        display: none;
+    }
+    .list_container_a-media{
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
 
+    .list_container {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+  
+    .info_blocks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .block_right_lessons {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        margin-bottom: 1em;
+    }
+    .img_right_lessons {
+        position: relative;
+        margin: 0 auto;
+    }
+    .right_block_bonus {
+        padding-top: 1em;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        
+ }
+    .block_bonus_form {
+        margin-top: 3em;
+        margin-bottom: 5em;
+        margin: 0;
+        padding-top: 1em;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+    }
+    .left_block_bonus{
+        display: none;
+    }
+    .block_left_lessons{
+        display: none;
+    }
+    .block_test_course{
+        display: none;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .global_list_button_container {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 1.5em;
+    }
+
+    .list_container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .register_container {
+      
+    }
+
+    .text_container_start {
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .img__container__start {
+        margin: 0;
+        padding: 0;
+    }
+
+    .block_info_about {
+        margin: 0;
+        padding: 0;
+    }
+
+    .info_blocks {
+        padding: 0;
+        margin-bottom: 1.5em;
+    }
+    .block_eng {
+        margin-top: 2em;
+        padding: 0;
+    }
+
+    .block_test_course {
+        margin: 0;
+        padding: 0;
+    }
+
+    .block_info_lessons {
+        margin: 0;
+        padding: 0;
+    }
+
+    .bottom_block {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Иконка для открытия чата */
+#chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    transition: background 0.3s;
+    z-index: 1000; /* Убедимся, что иконка всегда поверх других элементов */
+    
+}
+
+#chat-icon:hover {
+    background: #0056b3;
+}
+
+/* Адаптация иконки чата для мобильных устройств */
+@media (max-width: 768px) {
+    .img_right_lessons img {
+        margin-left: 0;
+    }
+    #chat-icon {
+        bottom: 20px; /* Оставляем отступ снизу */
+        right: 10px; /* Уменьшаем отступ справа */
+        width: 40px; /* Уменьшаем размер иконки */
+        height: 40px;
+        font-size: 20px; /* Уменьшаем размер шрифта */
+        
+    }
+    .bottom_block {
+        padding-bottom: 1em;
+        padding-top: 0.5em;
+        padding-left: 0;
+    }
+}
+@media (max-width: 500px) {
+    .img_right_lessons {
+        font-size: 0.8em;
+    }
+    .users_container {
+        margin-left: 0em;
+   }
+   .text_container_start_bold__input {
+    background-color: white;
+    margin-top: 2em;
+    padding: 10px 5px 10px 30px;
+    width: 70%;
+    display: flex;
+    border-radius: 30px;
+    margin-left: 0;
+}
+.text_container_start_bold__input__img {
+
+    width: 3em;
+    height: 2.8em;
+
+}
+.img__container__start {
+    display: none;
+}
+.text_container_start_bold {
+    font-size: 3.5em;
+    width: 80%;
+}
+.text_container_start_button__button {
+    display: none;
+}
+.text_container_start_under_bold {
+    margin-top: 1em;
+    display: none;
+}
+.block_info_about {
+    font-size: 0.6em;
+    margin: 0;
+    padding: 0;
+    margin-right: 0.5em;
+}
+}
+
+#support-chat {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    z-index: 1000; /* Убедимся, что окно чата всегда поверх других элементов */
+    
+}
+@media (max-width: 560px) {
+    .text_container_start_bold {
+        font-size: 3em;
+        width: 70%;
+    }
+    .text_container_start_bold__input {
+        width: 62%;
+    }
+    .text_container_start_bold__input__img {
+        width: 4em;
+        height: 2.8em;
+    }
+}
+@media (max-width: 416px){
+    .text_container_start_bold__input {
+        width: 53%;
+    }
+    .text_container_start_bold__input__img {
+        width: 5em;
+        height: 2.8em;
+    }
+    .users_container {
+        margin-left: 0em;
+        font-size: 13.5px;
+    }
+    .users_container__img img:first-child {
+        display: none;
+    }
+    .text_container_start_bold {
+        font-size: 2em;
+        width: 70%;
+    }
+}
+/* Адаптация окна чата для мобильных устройств */
+@media (max-width: 768px) {
+    #support-chat {
+        width: 90%; /* Ширина окна чата 90% от экрана */
+        right: 5%; /* Центрируем окно чата */
+        bottom: 70px; /* Поднимаем окно чата выше */
+        max-width: 300px; /* Ограничиваем максимальную ширину */
+    }
+
+    #chat-header {
+        padding: 10px; /* Уменьшаем отступы в заголовке */
+        font-size: 14px; /* Уменьшаем размер шрифта */
+    }
+
+    #close-chat {
+        font-size: 16px; /* Уменьшаем размер кнопки закрытия */
+    }
+
+    #chat-input-container {
+        padding: 8px; /* Уменьшаем отступы в поле ввода */
+    }
+
+    #chat-input {
+        font-size: 14px; /* Уменьшаем размер шрифта в поле ввода */
+    }
+
+    #send-message {
+        padding: 6px 10px; /* Уменьшаем отступы в кнопке отправки */
+        font-size: 14px; /* Уменьшаем размер шрифта */
+    }
+}
+
+/* Основные стили для header */
+.global_list_button_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    padding-bottom: 1.5em;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+
+
+.block_text {
+    font-weight: 800;
+    font-size: 25px;
+    margin-left: 1.2em;
+}
+
+/* Стили для кнопки бургер-меню */
+.menu-icon {
+    display: none; /* Скрываем на десктопе */
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000; /* Убедимся, что кнопка поверх других элементов */
+}
+
+/* Стили для меню */
+.list_container {
+    display: flex;
+    gap: 1.5em; /* Расстояние между элементами меню */
+    align-items: center;
+    transition: transform 0.3s ease-in-out; /* Плавное появление */
+}
+
+.list_container a {
+    color: #4A4A4A;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.list_container a:hover {
+    color: #007bff; /* Изменение цвета при наведении */
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Показываем кнопку на мобильных устройствах */
+    }
+
+    .list_container {
+        position: absolute;
+        top: 100%; /* Меню появляется под header */
+        right: 0;
+        flex-direction: column;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 200px; /* Ширина меню */
+        transform: translateX(100%); /* Скрываем меню за пределами экрана */
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    .list_container.active {
+        transform: translateX(0); /* Показываем меню */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .list_container a {
+        padding: 1em;
+        width: 100%;
+        text-align: left;
+        margin-left: 1em;
+    }
+}
 

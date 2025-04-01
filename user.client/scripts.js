@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.getElementById('menu-icon');
+        const navMenu = document.getElementById('nav-menu');
+    
+        menuIcon.addEventListener('click', function () {
+            navMenu.classList.toggle('active'); // Добавляем или удаляем класс active
+        });
+        const menuIcon2 = document.getElementById('menu-icon2');
+        const navMenu2 = document.getElementById('nav-menu');
+    
+        menuIcon2.addEventListener('click', function () {
+            navMenu2.classList.toggle('active'); // Добавляем или удаляем класс active
+        });
     function loadProgress(courseId) {
         let progressBar = document.getElementById(`userProgress${courseId}`);
         if (!progressBar) {
@@ -21,4 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Загружаем прогресс для каждого курса
     courses.forEach(courseId => loadProgress(courseId));
+
 });
+
+
+

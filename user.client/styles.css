@@ -1,46 +1,96 @@
-*{
-    margin: 0 auto;
-    padding: 0;
-}
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(225, 246, 233, 0.8);
     color: #333;
+    line-height: 1.6;
 }
 
 /* Хедер */
-.site-header {
-    background-color: #4CAF50;
-    padding: 1em 0;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1em;
+.global_list_button_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1em 2em;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-.logo {
-    font-size: 1.8em;
+.container_circle_text {
+    display: flex;
+    align-items: center;
+}
+
+.circle_container {
+    width: 40px;
+    height: 40px;
+}
+
+.circle_main {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid lightsalmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle_text {
+    font-size: 33px;
     font-weight: bold;
+    color: #48b774;
 }
 
-.nav-menu a {
-    color: white;
-    margin-left: 20px;
+.block_text {
+    font-weight: 800;
+    font-size: 25px;
+    margin-left: 1.2em;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #4A4A4A;
+}
+
+.list_container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.list_container a {
+
     text-decoration: none;
-    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s;
 }
 
-.nav-menu a:hover {
-    text-decoration: underline;
+.list_container a:hover {
+    color: #48b774;
+}
+
+.register_container {
+    margin-left: auto;
+}
+
+.register_container a {
+    color: #4A4A4A;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s;
+}
+
+.register_container a:hover {
+    color: #48b774;
 }
 
 /* Основной контент */
@@ -49,341 +99,201 @@ main {
 }
 
 h2 {
-    margin: 1em 0;
+    margin-bottom: 1em;
     color: #333;
 }
-.empty_course{
+
+.empty_course {
     margin-top: 2em;
     margin-bottom: 2em;
-    width: 16.5em;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
 }
 
-.all_conversation-test{
+.all_conversation-test {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
 }
-.conversation-test img{
-    width: 30em;
-}
-.conversation-test{
-    background-color: gainsboro;
-    padding-bottom: 2em;
-    border-radius: 15px;
-    padding: 1em 1em 1.5em;
-    margin-top: 1em;
-    width: 30em;
 
-}
-.conversation-test img,p{
-    margin-bottom: 2em;
+.conversation-test {
+    background-color: gainsboro;
+    padding: 1.5em;
     border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
+
+.conversation-test img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 1em;
+}
+
 .progress-bar {
     width: 100%;
+    margin-top: 1em;
     height: 20px;
     background-color: #e0e0e0;
-    margin-bottom: 1em;
     border-radius: 10px;
-    margin-top: 10px;
     overflow: hidden;
-    position: relative; /* Добавляем относительное позиционирование */
+    margin-bottom: 1.5em;
 }
 
 .progress {
     height: 100%;
     background-color: #76c7c0;
-    width: 100%; /* Начинаем с полной ширины */
-    position: absolute; /* Абсолютное позиционирование */
-    left: 0; /* Начинаем слева */
+    width: 0;
     transition: width 0.3s ease;
 }
+
 .btn {
-    padding: 10px 20px 25px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s, transform 0.1s;
-    height: 2em;
+    font-size: 16px;
 }
 
 .btn.primary {
     background-color: #4CAF50;
     color: white;
-    display: flex;
-    justify-content: center;
 }
 
-.btn:hover {
+.btn.primary:hover {
     background-color: #45a049;
     transform: translateY(-2px);
 }
-.empty_course.btn.primary{
-    margin: 0 auto;
-}
+
 /* Карточки курсов */
+.courses {
+    margin-top: 2em;
+}
+
 .course-list {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .course-card {
     background: white;
     border-radius: 8px;
-    padding: 15px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex: 1;
     min-width: 250px;
-}
-/* Main Container -  this controls the size of the circle */
-.course-card p{
-    margin-top: 1em;
-}
-.course-card button{
-    margin-top: 0.5em;
-}
-body{
-    background-color: rgba(225, 246, 233, 0.8);
-}
-a{
-    text-decoration: none;
-    color:#1f212b;
-}
-button{
-    cursor: pointer;
-    transition: 0.5s;
-}
-button:hover{
-    box-shadow: 1px 2px 8px 5px rgba(34, 60, 80, 0.2);
+    text-align: center;
 }
 
-
-.circle_container
-{
-	width : 40px;
-	height : 40px;
-	margin : 0;
-	padding : 0;
-/*	border : 1px solid red; */
-}
-.global_list_button_container{
-    display: flex;
-    margin-top: 1em;
-}
-.container_circle_text{
-    display: flex;
-    vertical-align: middle;
-}
-.circle_container
-{
-	width : 40px;
-	height : 40px;
-	margin : 0;
-	padding : 0;
-/*	border : 1px solid red; */
+.course-card h3 {
+    margin-bottom: 0.5em;
 }
 
-/* Circle Main draws the actual circle */
-.circle_main
-{
-	width : 100%;
-	height : 100%;
-	border-radius : 50%;
-	border : 6px solid lightsalmon;	/* can alter thickness and colour of circle on this line */
-	margin : 0;
-	padding : 0;
+.course-card p {
+    margin-bottom: 1em;
 }
 
-/* Circle Text Container - constrains text area to within the circle */
-.circle_text_container
-{
-	/* area constraints */
-	width : 70%;
-	height : 70%;
-	max-width : 70%;
-	max-height : 70%;
-	margin : 0;
-	padding : 0;
-
-	/* some position nudging to center the text area */
-	position : relative;
-	left : 15%;
-	top : 15%;
-	
-	/* preserve 3d prevents blurring sometimes caused by the text centering in the next class */
-	transform-style : preserve-3d;
-	
-	/*border : 1px solid green;*/
-}
-
-/* Circle Text - the appearance of the text within the circle plus vertical centering */
-.circle_text
-{
-	/* change font/size/etc here */
-	font: 33px "Tahoma", Arial, Serif;	
-	text-align : center;
-	color: #48b774;
-	/* vertical centering technique */
-	position : relative;
-	top : 50%;
-	transform : translateY(-50%);
-}
-.block_text{
-    font-weight: 800;
-    max-width: 83px;
-    max-height: 38px;
-    margin-left: 1.2em;
-    margin-top: 0.5em;
-    font-size: 25px;
-    vertical-align: middle;
-    display: inline;
-}
-.list_container{
-    display: flex;
-    justify-content: space-between;
-    width: 23em;
-    margin-left: 15em;
-    margin-top: 1.2em;
-    transition: 0,2s;
-
-}
-.list_container a:after {
-    display:block;
-    content: '';
-    border-bottom: solid 2px orange;  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-  }
-.list_container a{
-    color: #4A4A4A;
-    font-family: 'Poppins', sans-serif;
-
-    
-}
-.list_container a:hover:after{
-    transform: scaleX(1);
-}
-.register_container{
-    margin-left: 15.5em;
-    margin-right: 12em;
-    margin-top: 1.2em;
-
-    
-}
-.register_container button{
-    text-decoration: none;
-    width: 7em;
-    height: 3em;
-    border-radius: 20px;
-    background-color:#48b774;
+.course-card button {
+    background-color: #4CAF50;
     color: white;
     border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+.course-card button:hover {
+    background-color: #45a049;
 }
 
 /* Футер */
-.container_circle_text{
-    display: flex;
-    vertical-align: middle;
-}
-.circle_container
-{
-	width : 40px;
-	height : 40px;
-	margin : 0;
-	padding : 0;
-/*	border : 1px solid red; */
+.bottom_block {
+    padding: 2em;
+    background-color: #1f212b;
+    color: white;
+    margin-top: 2em;
 }
 
-/* Circle Main draws the actual circle */
-.circle_main
-{
-	width : 100%;
-	height : 100%;
-	border-radius : 50%;
-	border : 6px solid lightsalmon;	/* can alter thickness and colour of circle on this line */
-	margin : 0;
-	padding : 0;
-}
-
-/* Circle Text Container - constrains text area to within the circle */
-.circle_text_container
-{
-	/* area constraints */
-	width : 70%;
-	height : 70%;
-	max-width : 70%;
-	max-height : 70%;
-	margin : 0;
-	padding : 0;
-
-	/* some position nudging to center the text area */
-	position : relative;
-	left : 15%;
-	top : 15%;
-	
-	/* preserve 3d prevents blurring sometimes caused by the text centering in the next class */
-	transform-style : preserve-3d;
-	
-	/*border : 1px solid green;*/
-}
-
-/* Circle Text - the appearance of the text within the circle plus vertical centering */
-.circle_text
-{
-	/* change font/size/etc here */
-	font: 33px "Tahoma", Arial, Serif;	
-	text-align : center;
-	color: #48b774;
-	/* vertical centering technique */
-	position : relative;
-	top : 50%;
-	transform : translateY(-50%);
-}
-.list_container_a{
-    font-weight: 800;
-    width: 100%;
-    margin-top: 0.5em;
-    font-size: 25px;
-    vertical-align: middle;
+.list_container_a {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
-}
-.list_container_a a{
-    transition: all 0.5s;
+.list_container_a a {
     color: rgb(116, 116, 116);
-    font-size: 0.7em;
-    
+    text-decoration: none;
+    transition: color 0.3s;
 }
-.list_container_a p{
-    transition: 0.5s;
-    color: rgb(116, 116, 116);
-    font-size: 0.7em;
 
-}
-.list_container_a a:hover{
+.list_container_a a:hover {
     color: rgb(162, 160, 160);
-    
-}
-.list_container_a a:after {
-    display:block;
-    content: '';
-    
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-}  
-.bottom_block {
-    padding-left: 2em;
-    background-color: #1f212b;
-    height: 100%;
-    padding-top: 2em;
-    padding-bottom: 3em;
-    margin-right: 0em;
-}
-.list_container_a a:hover:after { transform: scaleX(1); }
-.btn.primary.unactive{
-    background-color: #4A4A4A;
-    cursor: default;
 }
 
+.list_container_a p {
+    color: rgb(116, 116, 116);
+    margin: 0;
+}
+
+/* Адаптация под мобильные устройства */
+/* Стили для мобильного меню */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Показываем иконку меню на мобильных устройствах */
+        cursor: pointer;
+    }
+    .menu-icon.absolut{
+        position: absolute;
+        margin-left: 80%;
+    }
+    .list_container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%); /* Скрываем меню за пределами экрана */
+        transition: transform 0.3s ease-in-out; /* Анимация для плавного выезжания */
+        z-index: 1000;
+    }
+
+    .list_container.active {
+        transform: translateY(0); /* Показываем меню */
+    }
+
+
+    .register_container {
+        display: none;
+    }
+
+    .all_conversation-test {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .conversation-test {
+        width: 100%;
+    }
+
+    .course-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-card {
+        width: 100%;
+    }
+}
