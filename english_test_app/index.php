@@ -1,6 +1,8 @@
+<?php
+require_once "islogged.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +40,11 @@
             <!-- Вопрос 2 -->
             <div class="question" id="question2">
                 <h3>2. Fill in the missing word:</h3>
-                <p>The sky is <input type="text" id="q2" placeholder="blue"> today.</p>
+                <p>The sky is ___ today.</p>
+                <label><input type="radio" name="q2" value="A"> green</label>
+                <label><input type="radio" name="q2" value="B"> blue</label>
+                <label><input type="radio" name="q2" value="B"> yellow</label>
+                
 
                 <button class="show-answer-btn" data-question="2">Показать ответ</button>
                 <div class="answer" id="answer2" style="display: none;">
@@ -50,9 +56,10 @@
             <div class="question" id="question3">
                 <h3>3. Drag the words to complete the sentence:</h3>
                 <div id="dropZone3" class="drop-zone">_____ is a beautiful day.</div>
-                <div class="draggable" draggable="true" id="word3a">Today</div>
-                <div class="draggable" draggable="true" id="word3b">Yesterday</div>
-                <button id="clearButton3">Отмена</button>
+                <label><input type="radio" name="q3" value="A"> Today</label>
+                <label><input type="radio" name="q3" value="B"> Yesterday</label>
+               
+               
 
                 <button class="show-answer-btn" data-question="3">Показать ответ</button>
                 <div class="answer" id="answer3" style="display: none;">
@@ -63,8 +70,10 @@
             <!-- Вопрос 4 -->
             <div class="question" id="question4">
                 <h3>4. What do you see in the image?</h3>
-                <img src="" alt="Question Image" class="responsive-img">
-                <input type="text" id="q4" placeholder="cat">
+                <img src="https://sun9-70.userapi.com/impg/WCIDmggTbyK9CmtlYWJ1cxIbddipf8sPkIJSgg/-W1ZV8TCoeA.jpg?size=240x320&quality=95&sign=c53d404d9547713b6e2d13f7e1fa76f3&c_uniq_tag=tVuKqJ4xQNTcU_jVqK2uFFR-MW2cvLFg4Eg5vdmyUqg&type=album" alt="Question Image" class="responsive-img">
+                <label><input type="radio" name="q4" value="A"> spiderman</label>
+                <label><input type="radio" name="q4" value="B"> mice</label>
+                <label><input type="radio" name="q4" value="B"> cat</label>
 
                 <button class="show-answer-btn" data-question="4">Показать ответ</button>
                 <div class="answer" id="answer4" style="display: none;">
@@ -103,7 +112,9 @@
             <div class="question" id="question7">
                 <h3>7. Correct the sentence:</h3>
                 <p>He don't like apples.</p>
-                <input type="text" id="q7" placeholder="Corrected sentence">
+                <label><input type="radio" name="q7" value="A"> He doesn't like apples.</label>
+                <label><input type="radio" name="q7" value="B"> He didn't like apples.</label>
+                <label><input type="radio" name="q7" value="C"> He don't like apples.</label>
 
                 <button class="show-answer-btn" data-question="7">Показать ответ</button>
                 <div class="answer" id="answer7" style="display: none;">
@@ -130,7 +141,9 @@
                 <h3>9. Read the text and answer the question:</h3>
                 <p>John has been working at the company for five years. He started as an intern and now he is a manager. He enjoys his job because it is challenging and rewarding.</p>
                 <p>What is John's current position?</p>
-                <input type="text" id="q9" placeholder="Answer">
+                <label><input type="radio" name="q9" value="A"> manager</label>
+                <label><input type="radio" name="q9" value="B"> policeman</label>
+                <label><input type="radio" name="q9" value="C"> cooker</label>
 
                 <button class="show-answer-btn" data-question="9">Показать ответ</button>
                 <div class="answer" id="answer9" style="display: none;">

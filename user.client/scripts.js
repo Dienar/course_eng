@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             navMenu2.classList.toggle('active'); // Добавляем или удаляем класс active
         });
     function loadProgress(courseId) {
+        let progressText = document.getElementById(`userProg${courseId}`);
         let progressBar = document.getElementById(`userProgress${courseId}`);
         if (!progressBar) {
             console.error("Progress bar element not found for course:", courseId);
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 if (data.progress !== undefined) {
                     progressBar.style.width = data.progress + "%";
+                    progressText.innerHTML = data.progress + "%";
                 }
             })
             .catch(error => console.error("Error loading progress:", error));

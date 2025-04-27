@@ -234,6 +234,15 @@ button:hover{
 .list_container a:hover:after{
     transform: scaleX(1);
 }
+.register_container-profile{
+    border: solid black 1px;
+    padding: 0.5em;
+    transition: 0.5s;
+}
+.register_container-profile:hover{
+    background-color: rgb(228, 227, 227);
+    border:solid #838282 1px;
+}
 .register_container{
     display: flex;
     margin-left: 13em;
@@ -242,9 +251,10 @@ button:hover{
     font-size: 1.2em;
     vertical-align: middle;    
 }
-.register_container i{
+.register_container i {
     margin-right: 0.5em;
     vertical-align: middle;
+    margin-top: 0.5em;
 }
 .register_container a{
     display: flex;
@@ -366,110 +376,152 @@ button:hover{
     margin: 5em 15em 0em 0em;
     
 }
-.block_info_about{
- margin-left: 0;
- margin-top: 9em;
- font-family: 'Poppins', sans-serif;
-
+/* Основные стили блока */
+.block_info_about {
+    padding: 60px 0;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .info_blocks {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
 }
-.info_blocks{
- margin-left: 0;
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
-
+  
+  /* Стили карточки курса */
+  .block_eng {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-left: 0;
+    width: 500px;
+    margin: 0 auto;
 }
-.block_eng{
-  margin-top: 2em;
-  width: 38em;
-  height: 26em;
-  border-radius: 10px;
-  margin-right: 0;
-  background-color: gainsboro;
-}
-.gainsboro{
-    background-color:gainsboro;
-}
-.showhide{
-    display: none;
-}
-
-.block_eng_plus{ 
-    margin-top: 1em;
-  font-weight: 600;
-  margin-left: 1.4em;
-    font-size: 1.3em;
-    color: #1f212b;
-}
-.block_eng h3{
-    color:#1f212b ;
-    margin-top: 2em;
-    margin-left: 1.4em;
-    margin-bottom: 2em;
-    font-size: 1.5em;
-    font-weight: 1000;
-
-}
-.block_eng_time{
-    margin-top: 1em;
-    font-weight: 500;
-    margin-left: 1.9em;
-    font-size: 1.1em;
-    color: #1c9f41;
-    background-color: lightgreen;
-    width: 7em;
+  
+  .block_eng:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Стили для верхнего ярлыка */
+  .block_eng_right {
+    display: inline-block;
+    padding: 6px 12px;
     border-radius: 20px;
-    padding: 0.2em;
-}
-.showhide_margin{
-    padding-top: 1.9em;
-}
-.block_eng__left_top{
-    border-radius: 25px;
-    padding: 0.8em;
-    width: 15em;
-    height: 40px;
-    margin-right: 0.9em;
-    margin-top: 2.7em;
-    font-weight: 800;
-    margin-left: 1.4em
-}
-.block_eng_right{
-    color: white;
-    background-color: lightsalmon;
-    border-radius: 25px;
-    padding: 0.8em;
-    float: right;
-    margin-right: 0.6em;
-    margin-top: 0.7em;
-    font-weight: 800;
-    margin-left: 1.4em
-}
-.eco{
-    background-color: #48b774;
-}
-.blue{
-    background-color:#2671c8;
-}
-.block_eng_button{
-  margin-top: 2em;
-  margin-left: 1.4em;
-}
-.block_eng a{
-    background-color: rgb(230, 101, 50);
-    cursor: pointer;
-    padding: 0.8em;
-    border-radius: 10px;
-    font-size: 1.2em;
-    border: none;
-    color: white;
+    font-size: 0.8rem;
     font-weight: 600;
-    transition: 0.5s;
+    margin-bottom: 15px;
+    background-color: #e2e8f0;
+    color: #4a5568;
+    margin-left: 0;
+}
+  
+  .block_eng_right.eco {
+    background-color: #bee3f8;
+    color: #2b6cb0;
+    margin-left: 0;
+  }
+  
+  .block_eng_right.blue {
+    margin-left: 0;
+    background-color: #ebf8ff;
+    color: #3182ce;
+}
+  
+  /* Заголовок курса */
+  .block_eng h3 {
+    font-size: 1.5rem;
+    color: #2d3748;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+  }
+  
+  /* Пункты преимуществ */
+  .block_eng_plus {
+    color: #4a5568;
+    margin-bottom: 12px;
+    padding-left: 10px;
+    position: relative;
+    font-size: 0.95rem;
+    margin-left: 0;
+  }
+  
+  .block_eng_plus:before {
+    position: absolute;
+    left: -5px;
+  }
+  
+  /* Блок с временем */
+  .block_eng_time {
+    color: #718096;
+    font-size: 0.9rem;
+    margin: 25px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Кнопка "Узнать подробнее" */
+  .block_eng_button {
+    margin-top: 20px;
+  }
+  
+  .block_eng_button a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4299e1;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+}
+  
+  .block_eng_button a:hover {
+    background-color: #3182ce;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(66, 153, 225, 0.3);
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .info_blocks {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .block_eng {
+      padding: 20px;
+    }
+  }
+  
+  /* Специальные стили для отдельных элементов */
+  #usercourse {
+    background-color: #fefcbf;
+    color: #975a16;
+  }
+  
+  
+  #testcourse a:hover {
+    background-color: #3182ce;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(66, 153, 225, 0.3);
+  }
 
-}
-.block_eng a:hover{
-    background-color: rgb(230, 129, 89);
-}
+
 .block_test_course{
     background-color: #1c9f41;
     margin-top: 5em;
@@ -505,7 +557,7 @@ button:hover{
     flex-wrap: wrap;
     width: 29.5em;
     height: 18.5em;
-    background-color: rgb(220, 219, 218);
+    background-color: white;
     border-radius: 12px;
     margin-left: 1em;
 }
@@ -539,7 +591,7 @@ button:hover{
     flex-wrap: wrap;
     width: 30em;
     height: 18.5em;
-    background-color: rgb(220, 219, 218);
+    background-color: white;
     border-radius: 12px;
 }
 .second-block_test_course h3{
@@ -579,7 +631,7 @@ button:hover{
     padding: 0;
 }
 .block_right_test_course button{
-    background-color: rgb(230, 101, 50);
+    background-color: #3182ce;
     width: 10em;
     padding: 0.8em;
     border-radius: 10px;
@@ -1111,10 +1163,6 @@ display: inline;
         padding: 0;
     }
 
-    .register_container {
-      
-    }
-
     .text_container_start {
         padding: 0;
         margin: 0 auto;
@@ -1125,18 +1173,12 @@ display: inline;
         padding: 0;
     }
 
-    .block_info_about {
-        margin: 0;
-        padding: 0;
-    }
-
     .info_blocks {
         padding: 0;
         margin-bottom: 1.5em;
     }
     .block_eng {
         margin-top: 2em;
-        padding: 0;
     }
 
     .block_test_course {
@@ -1236,10 +1278,8 @@ display: inline;
     display: none;
 }
 .block_info_about {
-    font-size: 0.6em;
     margin: 0;
     padding: 0;
-    margin-right: 0.5em;
 }
 }
 

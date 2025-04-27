@@ -8,6 +8,9 @@ $nameform = $_POST['name'];
 $emailform = $_POST['email'];
 $phoneform = $_POST['phone'];
 
+$_SESSION['name'] = $nameform;
+$_SESSION['email'] = $emailform;
+$_SESSION['phone'] = $phoneform;
 // Экранируем данные для безопасности
 $name = $mysqli->real_escape_string($nameform);
 $email = $mysqli->real_escape_string($emailform);
@@ -24,7 +27,7 @@ $stmt->store_result(); // Нужно вызвать store_result() перед и
 
 if ($stmt->num_rows > 0) {
     $_SESSION['user_role'] = 'admin';
-    header('Location: ../index_admin.php');
+    header('Location: ../admin_client/admin_client.php');
     exit();
 }else{
 $stmt = $mysqli->prepare("SELECT id FROM users WHERE email = ?");
@@ -46,16 +49,8 @@ if ($set->num_rows > 0) {
     $_SESSION['email'] = $email;
     echo "<script>
     var Reg_or_not = localStorage.setItem('Reg_or_Not',2);
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                title: 'Поздравляю! Вы вошли в аккаунт!',
-                icon: 'success',
-                confirmButtonText: 'OK'
-            }).then(() => {
-                window.location.replace('../index_loged.php');
-            });
-        });
     </script>";
+    header('Location: ../smsauth/send_sms.php');
 } else {
     // Вставляем нового пользователя
     $query = $mysqli->prepare("INSERT INTO users (name, email, phone) VALUES (?, ?, ?)");
@@ -67,19 +62,9 @@ if ($set->num_rows > 0) {
         
         $_SESSION['email'] = $email;
         $_SESSION['user_role'] = 'user';
-        $_SESSION['user_id'] = $new_user_id; 
-        echo "<script>
-        localStorage.setItem('Reg_or_Not',2);
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                title: 'Поздравляю! Вы создали аккаунт!',
-                icon: 'success',
-                confirmButtonText: 'OK'
-            }).then(() => {
-                window.location.replace('../index_loged.php');
-            });
-        });
-    </script>";
+        $_SESSION['user_id'] = $new_user_id;
+        "<script>localStorage.setItem('Reg_or_Not',2);</script>"; 
+        header('Location: ../smsauth/send_sms.php');
     } else {
         echo "Ошибка при регистрации.";
     }}

@@ -42,8 +42,8 @@
 <div class="list_container" id="nav-menu">
     <a href="#testcourse">Тестовый курс</a>
     <a href="#usercourse">Курсы</a>
-    <a hhref="#" onclick="Reg_or_not()"> Profile</a> 
-        <a href="" id="exit" onclick="Reg_or_not2()">Exit</a>
+    <a hhref="#" onclick="Reg_or_not()"> Профиль</a> 
+        <a href="" id="exit" onclick="Reg_or_not2()">Выход</a>
        
 </div>
 <div class="list_container">
@@ -52,7 +52,8 @@
     <a href="#helpinput"id="show-chat">Помощь</a>
     <a href="#login">О нас</a>
 </div>
-<div class="register_container media" ><a href="#" onclick="Reg_or_not()"><i class="fa-solid fa-user-tie"></i> Profile</a> 
+<div class="register_container media" >
+<a href="#" class="register_container-profile" onclick="Reg_or_not()"> Профиль</a> 
 <a href="" id="exit" onclick="Reg_or_not2()"><i class="fa-solid fa-right-from-bracket"></i></a>
 </div>
 </div>

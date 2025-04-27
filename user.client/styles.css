@@ -36,20 +36,18 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 6px solid lightsalmon;
+    border: 4px solid lightsalmon;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .circle_text {
-    font-size: 33px;
-    font-weight: bold;
+    font-size: 29px;
     color: #48b774;
 }
 
 .block_text {
-    font-weight: 800;
     font-size: 25px;
     margin-left: 1.2em;
 }
@@ -64,11 +62,12 @@ body {
 .list_container {
     display: flex;
     gap: 20px;
+    margin-right: 3em;
     transition: transform 0.3s ease-in-out;
 }
 
 .list_container a {
-
+    color: #000;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     transition: color 0.3s;
@@ -163,8 +162,8 @@ h2 {
 .btn.primary {
     background-color: #4CAF50;
     color: white;
+    margin-left: 0.5em;
 }
-
 .btn.primary:hover {
     background-color: #45a049;
     transform: translateY(-2px);
@@ -226,6 +225,8 @@ h2 {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    margin-left: 0.5em;
     gap: 10px;
 }
 
@@ -243,7 +244,64 @@ h2 {
     color: rgb(116, 116, 116);
     margin: 0;
 }
+/*Поздравления
+/* Стили для поздравления */
+.congrats-popup {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
 
+.congrats-content {
+    background: linear-gradient(135deg, #6e48aa, #9d50bb);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    position: relative;
+    max-width: 500px;
+    animation: bounceIn 0.6s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.congrats-content h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Анимация */
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* Конфетти */
+.confetti {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
 /* Адаптация под мобильные устройства */
 /* Стили для мобильного меню */
 @media (max-width: 768px) {
