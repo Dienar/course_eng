@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global - Личный кабинет - Разговорный курс</title>
+    <title>Global - Личный кабинет</title>
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
@@ -48,6 +48,7 @@ if(empty($_SESSION['user_id'])){
 }
 $user_id = $_SESSION['user_id'];
 
+
 // Получаем все курсы с прогрессом 100%
 $stmt = $mysqli->prepare("SELECT course_id FROM user_progress WHERE user_id = ? AND progress = 100");
 $stmt->bind_param("i", $user_id);
@@ -78,7 +79,28 @@ while ($course = $completed_courses->fetch_assoc()) {
             break;
     }
 }
-
+$stmt = $mysqli->prepare("SELECT * FROM users_second_stage_course WHERE user_id = ?");
+$stmt->bind_param("i",$user_id);
+$stmt->execute();
+$result_essay = $stmt->get_result();
+$row_essay = $result_essay->fetch_assoc();
+if(!empty($row_essay['essay'])){
+    echo '<script>showCourseCongrats('.$course_id.');</script>';
+    switch($row_essay['course_id']) {
+        case 1:
+            $_SESSION['nextcourse1'] = "<h3>Спасибо что прошли наш курс!</h3>";
+            break;
+        case 2:
+            $_SESSION['nextcourse2'] = "<h3>Спасибо что прошли наш курс!</h3>";
+            break;
+        case 3:
+            $_SESSION['nextcourse3'] = "<h3>Спасибо что прошли наш курс!</h3>";
+            break;
+        case 4:
+            $_SESSION['nextcourse4'] = "<h3>Спасибо что прошли наш курс!</h3>";
+            break;
+    }
+}
 // Получаем общий прогресс (первый попавшийся)
 $stmt = $mysqli->prepare("SELECT progress FROM user_progress WHERE user_id = ? LIMIT 1");
 $stmt->bind_param("i", $user_id);

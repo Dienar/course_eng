@@ -3,6 +3,69 @@ session_start();
 require_once "../../php/conn.php";
 require_once "../islogged.php";
 
+// Обработка отправки формы
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Получаем данные пользователя
+    $user_id = $_SESSION['user_id'];
+    $course_id = 1; // ID текущего курса (Этап 2: Аудирование и Чтение)
+    
+    // Собираем ответы в массив
+    $answers = [
+        'listening' => [
+            'q1' => $_POST['q1'] ?? null,
+            'q2' => $_POST['q2'] ?? null
+        ],
+        'reading' => [
+            'q1' => $_POST['q3'] ?? null,
+            'q2' => $_POST['q4'] ?? null
+        ]
+    ];
+    
+    // Преобразуем массив в JSON для хранения в базе
+    $answers_json = json_encode($answers, JSON_UNESCAPED_UNICODE);
+    
+    // Рассчитываем прогресс (примерно, можно доработать)
+    $progress = 50; // Базовый прогресс за отправку ответов
+    $total_questions = 4;
+    $answered = 0;
+    
+    foreach ($answers as $section) {
+        foreach ($section as $answer) {
+            if (!empty($answer)) $answered++;
+        }
+    }
+    
+    $progress = min(100, round(($answered / $total_questions) * 100));
+    $completion_date = date('Y-m-d H:i:s');
+    try {
+        // Проверяем, есть ли уже запись для этого пользователя и курса
+        $stmt = $mysqli->prepare("SELECT user_id FROM users_second_stage_course WHERE user_id = ? AND course_id = ?");
+        $stmt->bind_param("is", $user_id, $course_id);
+        $stmt->execute();
+        $stmt->store_result();
+        
+        if ($stmt->num_rows > 0) {
+            // Обновляем существующую запись
+            $stmt = $mysqli->prepare("UPDATE users_second_stage_course SET essay = ? WHERE user_id = ? AND course_id = ? AND completed_at = ?");
+            $stmt->bind_param("siis", $answers_json, $user_id, $course_id, $completion_date);
+        } else {
+            // Создаем новую запись
+            $stmt = $mysqli->prepare("INSERT INTO users_second_stage_course (user_id, course_id, essay, completed_at ) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("isis", $user_id, $course_id, $answers_json, $completion_date);
+        }
+        
+        if ($stmt->execute()) {
+            // Перенаправляем после успешного сохранения
+            header("Location: main.php?email=" . $_SESSION["email"] . "&courseid=" . $course_id);
+            exit();
+        } else {
+            throw new Exception("Ошибка при сохранении прогресса: " . $mysqli->error);
+        }
+    } catch (Exception $e) {
+        die("Произошла ошибка: " . $e->getMessage());
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +107,7 @@ require_once "../islogged.php";
 
     <!-- Main Test Content -->
     <div class="test-container">
+    <form method="POST" action="" id="testForm">
         <div class="test-header">
             <h1>Этап 2: Аудирование и Чтение</h1>
             <div class="progress-container">
@@ -73,14 +137,14 @@ require_once "../islogged.php";
             </div>
             
             <div class="questions-container">
-                <div class="question">
-                    <p>1. О чем говорилось в аудиозаписи?</p>
-                    <div class="option">
-                        <label>
-                            <input type="radio" name="q1" value="a">
-                            О путешествии в горы
-                        </label>
-                    </div>
+                    <div class="question">
+                        <p>1. О чем говорилось в аудиозаписи?</p>
+                        <div class="option">
+                            <label>
+                                <input type="radio" name="q1" value="a">
+                                О путешествии в горы
+                            </label>
+                        </div>
                     <div class="option">
                         <label>
                             <input type="radio" name="q1" value="b">
@@ -96,9 +160,9 @@ require_once "../islogged.php";
                 </div>
                 
                 <div class="question">
-                    <p>2. Какой главный совет дал спикер?</p>
-                    <input type="text" class="text-answer" placeholder="Введите ваш ответ...">
-                </div>
+                        <p>2. Какой главный совет дал спикер?</p>
+                        <input type="text" name="q2" class="text-answer" placeholder="Введите ваш ответ...">
+                    </div>
             </div>
         </div>
 
@@ -120,14 +184,14 @@ require_once "../islogged.php";
             </div>
             
             <div class="questions-container">
-                <div class="question">
-                    <p>1. Какова была цель экспедиции?</p>
-                    <div class="option">
-                        <label>
-                            <input type="radio" name="q2" value="a">
-                            Изучение животных джунглей
-                        </label>
-                    </div>
+                    <div class="question">
+                        <p>1. Какова была цель экспедиции?</p>
+                        <div class="option">
+                            <label>
+                                <input type="radio" name="q3" value="a">
+                                Изучение животных джунглей
+                            </label>
+                        </div>
                     <div class="option">
                         <label>
                             <input type="radio" name="q2" value="b">
@@ -143,24 +207,25 @@ require_once "../islogged.php";
                 </div>
                 
                 <div class="question">
-                    <p>2. Опишите, что они искали, согласно легенде?</p>
-                    <input type="text" class="text-answer" placeholder="Введите ваш ответ...">
-                </div>
+                        <p>2. Опишите, что они искали, согласно легенде?</p>
+                        <input type="text" name="q4" class="text-answer" placeholder="Введите ваш ответ...">
+                    </div>
             </div>
         </div>
 
         <!-- Navigation -->
         <div class="test-navigation">
-            <button class="nav-btn prev-btn" disabled>
-                <i class="fas fa-arrow-left"></i> Назад
-            </button>
-            <button class="nav-btn next-btn">
-                Далее <i class="fas fa-arrow-right"></i>
-            </button>
-            <button class="nav-btn submit-btn hidden">
-                <i class="fas fa-paper-plane"></i> Отправить
-            </button>
-        </div>
+                <button class="nav-btn prev-btn" type="button" disabled>
+                    <i class="fas fa-arrow-left"></i> Назад
+                </button>
+                <button class="nav-btn next-btn" type="button">
+                    Далее <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="nav-btn submit-btn hidden" type="submit">
+                    <i class="fas fa-paper-plane"></i> Отправить
+                </button>
+            </div>
+        </form>
     </div>
 
     <!-- Footer -->

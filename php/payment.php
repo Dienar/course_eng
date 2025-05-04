@@ -32,7 +32,7 @@ class payment extends conn
             // Если курс уже куплен, показываем alert и отправляем на index.php
             echo "<script>
                 alert('Ошибка: Вы уже приобрели этот курс.');
-                window.location.replace('../');
+                window.location.replace('../index_loged.php');
             </script>";
             exit();
         }

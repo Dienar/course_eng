@@ -9,6 +9,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="manifest" href="/site.webmanifest">
+
     <script src="jquery-3.7.1.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -90,6 +91,10 @@
     <span>45k+ Уже зарегистировались у нас. <a class="text_container_start_bold__orange__second__word">Попробуй и ты !</a></span>
     </div>
 </div>
+
+    
+       
+  
 <div class="block_info_about">
     <div class="info_blocks">
         <div class="block_eng">
@@ -339,7 +344,10 @@
 </div>
 </div>
 <div class="right_block_bonus">
-    <form action="php/reg.php" method="POST">
+    <form action="php/reg.php" method="POST"><?php
+    
+    if(!empty($_GET['errorMessage']))
+    echo "<div class='valid--error'> $_GET[errorMessage] </div>" ;?>
         <div class="right_block_bonus_text first_block">
         <input class="right_block_bonus_text-input" type="text" name="name" required placeholder="Имя">
     </div>
@@ -354,6 +362,7 @@
     </form>
 </div>
 </div>
+
 <footer class="dark-footer">
   <div class="footer-container">
     <div class="footer-logo-col">
@@ -452,6 +461,7 @@
 <div id="chat-icon">
 	<i class="fas fa-comment-dots" style="margin: 0 auto;"></i>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="js/payment.js"></script>

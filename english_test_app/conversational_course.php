@@ -1,6 +1,3 @@
-<?php
-require_once "islogged.php";
-?>
 <!DOCTYPE html>
 <html lang="en">
 
